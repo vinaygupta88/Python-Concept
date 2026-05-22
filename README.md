@@ -66,7 +66,7 @@ Python-Concept/
 ## 🚀 Getting Started
 Clone the Repository <br>
 <ol> 
-    <li>git clone https://github.com/your-username/Python-Concept.git<li>
+    <li>git clone https://github.com/vinaygupta88/Python-Concept.git</li>
     <li>cd Python-Concept</li>
     <li>python filename.py</li>
 </ol>
@@ -111,7 +111,7 @@ If you find this repository useful, please consider giving it a ⭐ on GitHub.
 ## 📜 License
 MIT License
 
-Copyright (c) 2026 Vinay Kumar
+Copyright (c) 2026 <a href="https://github.com/vinaygupta88">Vinay Kumar</a>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
