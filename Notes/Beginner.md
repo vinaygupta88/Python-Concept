@@ -138,3 +138,119 @@ In python **input()** built inn function is used to take the input from the user
                 float(input())
 <b>TASK 1 :</b>a. Write a program to input 2 numbers & print their sum, product, modulo, difference.
         b. Write a programm to input side of a sqaure and print its area
+
+## Day 2
+<h2>Strings</h2>
+Strings are sequence of characters written inside quotes. It can include letters, numbers, symbols and spaces. A single character is treated as a string of length one.<br>
+Strings can be created using either single ('...') or double ("...") quotes. Both behave the same.<br>
+Use triple quotes ('''...''' ) or ( """...""") for strings that span multiple lines. Newlines are preserved.
+<h4>Basic operations</h4>
+
+```
+1. Accessing Characters in String:
+        Strings are indexed sequences. Positive indices start at 0 from the left, negative indices start at -1 from the right.
+        example:-       
+                        s = "ABCDEF"
+                        print(s[0])   
+                        print(s[4])
+
+2. String Slicing:
+        Slicing is a way to extract a portion of a string by specifying the start and end indexes. The syntax for slicing is string[start:end], where start starting index and end is stopping index (excluded).
+        example:
+                s = "ABCDEF"
+                print(s[1:4])    
+                print(s[:3])     
+                print(s[3:])    
+                print(s[::-1])
+
+3. String Immutability:
+        Strings are immutable, meaning their values cannot be changed after creation. Any modification to a string creates a new string instead of altering the original one.
+        example:                s = "aBCDEF"
+                                s = "A" + s[1:]  
+                                print(s)
+
+4. Deleting a String:
+        Individual characters of a string cannot be deleted because strings are immutable. However, an entire string variable can be removed using del keyword
+        exapmle:                s = "ABC"
+                                del s
+
+5.  Updating a String:
+        Strings cannot be changed directly after creation. So any modification results in a new string being created using slicing or methods like replace().
+        example:                s = "ABCD EF"
+                                s1 = "H" + s[1:]                  
+                                s2 = s.replace("ABC", "abc")  
+                                print(s1)
+                                print(s2)
+
+```
+<h4>Methods in Strings</h4>
+
+```
+1. **len():** returns the total number of characters in a string (including spaces and punctuation).
+        eg:-    s = "GeeksforGeeks"
+                print(len(s))
+2. **upper() and lower():** upper() method converts all characters to uppercase whereas, lower() method converts all characters to lowercase.
+        eg:-    s = "Hello World"
+                print(s.upper())
+                print(s.lower())
+3. **strip() and replace():** strip() removes leading and trailing whitespace from the string and replace() replaces all occurrences of a specified substring with another.
+        eg:-    s = "   ABC   "
+                print(s.strip()) 
+4. **Concatenation:** Strings can be combined by using + operator.
+        eg:-    s1 = "Hello"
+                s2 = "World"
+                print(s1 + " " + s2)
+5. **Repetition:** A string can be repeated multiple times using *. 
+        eg:-    s = "Hello "
+                print(s * 3)
+<h4>Formatting Strings</h4>
+
+- **f-strings:** f-strings allows to directly insert variables and expressions inside a string using {} brackets.
+        eg:-    name = "Jake"
+                age = 22
+                print(f"Name: {name}, Age: {age}")
+- **format():** format() method allows inserting values into placeholders {} inside a string.
+        eg:-    s = "My name is {} and I am {} years old.".format( "Emily", 22)
+```
+<h4>Strings Functions</h4>
+
+1. endswith("substring"): Return true if string end with substring.
+2. capitalize(): Capitalizes 1st Character
+3. replace(old,new): Replace all ocurrence of old string with new one
+4. find(words): Return 1st index of 1st occure
+5. count("substring"): Count the occurence of substring.
+
+<h2>Conditional  Statements</h2>
+Conditional statements are used to control the flow of execution in a program based on specific conditions. They allow programs to execute different blocks of code depending on whether a condition evaluates to True or False.
+
+1. **if Statement:** If statement is used to execute a block of code only when a specified condition evaluates to True.<img src="https://media.geeksforgeeks.org/wp-content/uploads/20260319073415383622/1.webp" height="200px">
+2. **If Else:** statement is used to execute one block of code when the condition is True and another block when the condition is False.<img src="https://media.geeksforgeeks.org/wp-content/uploads/20260319073523078423/2.webp" height="200px">
+3. **If-elif-else Statement:** 
+```
+age = 25
+
+if age <= 12:
+    print("Child.")
+elif age <= 19:
+    print("Teenager.")
+elif age <= 35:
+    print("Young adult.")
+else:
+    print("Adult.")
+```
+4. **Nested if-else statement** is an if-else statement placed inside another if or else block. It is used to check conditions within another condition
+```
+age = 70
+is_member = True
+
+if age >= 60:
+    if is_member:
+        print("30% senior discount!")
+    else:
+        print("20% senior discount.")
+else:
+    print("Not eligible for a senior discount.")
+```
+<b>Task 2 </b> a. Write a program to find the greatest of 3 numbers entered by the user.
+                b. Write a program to check if a number entered by the user is odd or even.
+                c. WAP to check if the munber is multiple of 7 or not
