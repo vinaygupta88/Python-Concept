@@ -54,12 +54,10 @@ Whether you are a beginner starting with Python syntax or an advanced developer 
 ```bash
 Python-Concept/
 │
-├── Basics/
-├── Intermediate/
-├── Advanced/
-├── Projects/
+├── Codes
 ├── Interview_Questions/
 ├── Notes/
+├── Projects/
 └── README.md
 ```
 ---
