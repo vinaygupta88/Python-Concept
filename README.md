@@ -54,7 +54,9 @@ Whether you are a beginner starting with Python syntax or an advanced developer 
 ```bash
 Python-Concept/
 │
-├── Codes
+├── Codes/
+|    ├── Daily Concept/
+|    ├── Practice Set/
 ├── Interview_Questions/
 ├── Notes/
 ├── Projects/
