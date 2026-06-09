@@ -254,3 +254,159 @@ else:
 <b>Task 2 </b> a. Write a program to find the greatest of 3 numbers entered by the user.
                 b. Write a program to check if a number entered by the user is odd or even.
                 c. WAP to check if the munber is multiple of 7 or not
+
+## Day 3
+<h2>List and Tuple</h2>
+<h3>List</h3>
+List is a built-in data structure used to store an ordered collection of items. They are dynamic, resizable and capable of storing multiple data types.
+
+- **Mutable**: list elements can be changed, updated, added, or removed after the list is created.
+- **Ordered:** elements maintain the order in which they are inserted.
+- **Index-based:** elements are accessed using their position, starting from index 0.
+<h4>Creating List</h4>
+
+- **Using Square Brackets:** Square brackets [] are used to create a list directly.<br>Example:-  a = [12,23, 34]
+- **Using list() Constructor:** A list can also be created by passing an iterable (such as tuple, string or another list) to the list() constructor.<br>Example:-  a = list((1, 2, 3, 'apple', 4.5))
+- **Creating List with Repeated Elements:** A list with repeated elements can be created using the multiplication (*) operator.<br>Example:-  a = [2] * 5
+- **Accessing List Elements :** Elements in a list are accessed using indexing. Python uses zero-based indexing, meaning a[0] represents the first element.
+```
+a = [10, 20, 30]
+print(a[0])
+print(a[-1])
+```
+<h4>Adding Elements into List</h4>
+
+- **append():** Adds an element at the end of the list. Eg:- variable_name.append(Value)
+- **insert():** Adds an element at a specific position. Eg:- variable_name.insert(position, value)
+- **extend():** Adds multiple elements to the end of the list. Eg:- variable_name.extend(value/list)
+
+<h4>Removing Elements from List</h4>
+
+1. **remove():** Removes the first occurrence of an element.
+2. **pop(index)**: Removes the element at a specific index or the last element if no index is specified.
+3. **del statement:** Deletes an element at a specified index.
+4. **clear():** removes all items.
+
+```
+a = [1, 2]
+
+a.append(3)
+a.insert(1, 2)
+a.extend([3, 4])
+a[1] = 25                       # udating list by index value
+a.remove(2)
+a.pop()
+del a[1]
+a.clear()
+```
+
+<h4>List methods</h4>
+
+**Example:-** *lst = [2,1,3]*
+1. lst.sort()   #sorts in ascending order       [1,2,3]
+2. lst.sort(reverse=True)       # sorts in descending order     [3,2,1]
+3. lst.reverse()                # reverse list  [3,2,1]
+
+<h3>Tuple</h3>
+A tuple is an immutable ordered collection of elements.
+
+- Tuples are similar to lists, but unlike lists, they cannot be changed after their creation.
+- Can hold elements of different data types.
+- These are ordered, heterogeneous and immutable.
+- A tuple is created by placing all the items inside parentheses (), separated by commas. A tuple can have any number of items. Eg:- tup = ()           tup = ('Geeks', 'For')
+- **For single value tuple must to add comma after value to treet as tuple other wise interpreter identify that as int, float, or string**
+<h4>Tuple Basic Operations</h4>
+Concatenation of Tuples : Tuples can be concatenated using the + operator. This operation combines two or more tuples to create a new tuple.
+
+```
+tup1 = (0, 1, 2, 3)
+tup2 = ('Geeks', 'For', 'Geeks')
+tup3 = tup1 + tup2
+print(tup3)
+```
+Slicing of Tuple : Slicing a tuple means creating a new tuple from a subset of elements of the original tuple. The slicing syntax is tuple[start:stop:step].
+
+```
+tup = tuple('GEEKSFORGEEKS')
+print(tup[1:])
+print(tup[::-1])
+print(tup[4:9])
+```
+Deleting a  : Since tuples are immutable, we cannot delete individual elements of a tuple. However, we can delete an entire tuple using del statement.
+```
+tup = (0, 1, 2, 3, 4)
+del tup
+print(tup)
+```
+Tuple Unpacking with Asterisk (*): *operator is used in tuple unpacking to grab multiple items into a list. This is useful to extract just a few specific elements and collect the rest together.
+```
+tup = (1, 2, 3, 4, 5)
+a, *b, c = tup
+print(a) 
+print(b) 
+print(c)
+```
+Converting a List to a Tuple: We can convert a list in Python to a tuple by using the tuple() constructor and passing the list as its parameters.
+```
+# Code for converting a list and a string into a tuple
+a = [0, 1, 2]
+tup = tuple(a)
+
+print(tup)
+```
+
+Tuple Packing
+```
+# Tuple packing
+a, b, c = 11, 12, 13
+tup = (a, b, c)
+print(tup)
+```
+<h4>Tuple Built-In Methods</h4>
+Tuples support only a few methods due to their immutable nature. The two most commonly used methods are count() and index()
+
+1. **index( ) :** Find in the tuple and returns the index of the given value where it's available.
+2. **count( ):** Returns the frequency of occurrence of a specified value.
+<table style="text-align:center;border:1px solid black;border-collapse:collapse;">
+    <tr>
+        <th style="border:1px solid black;padding:8px;">Parameter</th>
+        <th style="border:1px solid black;padding:8px;">List</th>
+        <th style="border:1px solid black;padding:8px;">Tuple</th>
+    </tr>
+    <tr>
+        <td style="border:1px solid black;padding:8px;">Mutability</td>
+        <td style="border:1px solid black;padding:8px;">Lists are mutable (can be modified).</td>
+        <td style="border:1px solid black;padding:8px;">Tuples are immutable (cannot be modified).</td>
+    </tr>
+    <tr>
+        <td style="border:1px solid black;padding:8px;">Iteration Speed</td>
+        <td style="border:1px solid black;padding:8px;">Iteration over lists is time-consuming.</td>
+        <td style="border:1px solid black;padding:8px;">Iteration over tuples is faster.</td>
+    </tr>
+    <tr>
+        <td style="border:1px solid black;padding:8px;">Operations</td>
+        <td style="border:1px solid black;padding:8px;">Lists are better for insertion and deletion operations.</td>
+        <td style="border:1px solid black;padding:8px;">Tuples are more suitable for accessing elements efficiently.</td>
+    </tr>
+    <tr>
+        <td style="border:1px solid black;padding:8px;">Memory Usage</td>
+        <td style="border:1px solid black;padding:8px;">Lists consume more memory.</td>
+        <td style="border:1px solid black;padding:8px;">Tuples consume less memory.</td>
+    </tr>
+    <tr>
+        <td style="border:1px solid black;padding:8px;">Built-in Methods</td>
+        <td style="border:1px solid black;padding:8px;">Lists have several built-in methods.</td>
+        <td style="border:1px solid black;padding:8px;">Tuples have fewer built-in methods.</td>
+    </tr>
+    <tr>
+        <td style="border:1px solid black;padding:8px;">Error Prone</td>
+        <td style="border:1px solid black;padding:8px;">Lists are more prone to unexpected changes and errors.</td>
+        <td style="border:1px solid black;padding:8px;">Tuples, being immutable, are less error-prone.</td>
+    </tr>
+</table>
+
+<b>Task 3 :</b> a. Write to ask the user to enter names of theri 3 favorite movies & store them in a list.
+                b. Write to check if a list contains a palindrome of element.(Hint: used copy() method)
+                c. Write a program to count the number of students with the "A" grade in the following tuple. Store the above values in a list & sort then from "A to D".
+
+## Day 4
