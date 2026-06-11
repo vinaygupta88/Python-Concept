@@ -410,3 +410,172 @@ Tuples support only a few methods due to their immutable nature. The two most co
                 c. Write a program to count the number of students with the "A" grade in the following tuple. Store the above values in a list & sort then from "A to D".
 
 ## Day 4
+<h2>Dictonary & Sets</h2>
+Dictionary is a data structure that stores information in key-value pairs. While keys must be unique and immutable (like strings or numbers), values can be of any data type, whether mutable or immutable. It could not allow duplicated keys.
+
+- A dictionary is created by writing key-value pairs inside { }, where each key is connected to a value using colon (:). A dictionary can also be created using dict() function.
+- **Accessing Dictionary Items :** A value in a dictionary is accessed by using its key. This can be done either with square brackets [ ] or with the get() method. Both return the value linked to the given key.
+- **Adding and Updating :** New items are added to a dictionary using the assignment operator (=) by giving a new key a value. If an existing key is used with the assignment operator, its value is updated with the new one.
+<h5>Removing Dictionary Items</h5>
+
+1. **del:** removes an item using its key.
+2. **pop():** removes the item with the given key and returns its value
+3. **popitem():** removes and returns the last inserted key-value pair
+4. **clear()**: removes all items from the dictionary
+
+```
+# Accessing dictionary Items
+d = {"name": "Sam"}
+d["age"] = 21        # Adding a new key-value pair
+d["name"] = "Alex"   # Updating an existing value
+print(d)
+
+# Del methods
+
+d = {"a": 1, "b": 2}
+del d["a"]
+print(d)
+
+# pop method
+
+d = {"a": 1, "b": 2}
+val = d.pop("a")
+print(val)
+print(d)
+
+#pop items
+d = {"a": 1, "b": 2}
+print(d.popitem())
+
+#clear methods
+d = {"a": 1, "b": 2}
+d.clear()
+print(d)
+
+
+```
+<h4>Dictionary Methods</h4>
+Example: myDict = {"a": 1, "b": 2,"c":3,"d":4}
+
+1. myDict.keys()                # returns all keys
+2. myDict.values()              # return all values
+3. myDict.items()               # return all (key, value) pairs as tuple
+4. myDict.get("key")            # return the key according to values
+5. myDict.update(newdict)       # insert the specified item to the dictionary
+6. **Iterate key-value pairs :**  Returns all key-value pairs as tuples.
+```
+d = {"a": 1, "b": 2}
+for key, value in d.items():
+    print(key, value)
+```
+<h4>Nested Dictionaries</h4>
+A nested dictionary is a dictionary that contains another dictionary as one of its values. Below diagram shows how a nested dictionary works, where key 3 points to another dictionary inside the main dictionary.<img src="https://media.geeksforgeeks.org/wp-content/uploads/20260110161344925940/keys.webp" height=200px>
+
+```
+d = {
+    "student": {
+        "name": "Sam",
+        "age": 20
+    }
+}
+
+print(d["student"]["name"])
+```
+<h2>SET<h2>
+Set is used to store a collection of unordered items.
+
+- No duplicate elements. If you try to insert the same item again, it is ignored because sets store only unique values.
+- An unordered collection. When we access all items, they are accessed without any specific order and we cannot access items using indexes as we do in lists.
+- **set() method** is used to convert other data types, such as lists or tuples, into sets.
+- Sets can store heterogeneous elements in it, i.e., a set can store a mixture of string, integer, boolean, etc datatypes.
+<h4>Set Methods</h4>
+Python set methods are built-in functions used to add, remove, update and perform other operations on sets. These methods help manage and manipulate set elements efficiently.
+
+Example: st = {1,2,3,4,5,6,7,8,9}
+
+1. **st.add(el)**: Adds an element to the set.
+2. **st.clear():** Removes all elements from the set.
+3. **st.copy():** Returns a shallow copy of the set.
+4. **st.difference():** Returns a set containing elements present in the first set but not in the second set.
+5. **st.difference_update():** Removes common elements from the original set.
+6. **st.discard():** Removes an element from the set if it exists.
+7. **st.pop():** Removes and returns a random element from the set.
+7. **st.remove(el):** Removes the specified element from the set.
+8. **frozenset():** Creates an immutable set.
+<h4>SET Operation</h4>
+
+1. Union of Sets: union() function combines two sets and returns a new set with all unique elements.
+2. Intersection of Sets: intersection() function returns a new set containing elements that are common to both sets.
+3. Difference of Sets: difference() function returns a set containing elements that are in the first set but not in the second.
+4. Symmetric Difference of sets : The symmetric difference of two sets includes elements that are in either set but not in both.
+```
+s = {10, 50, 20}
+print(s)
+print(type(s))
+
+# typecasting list to set
+s = set(["a", "b", "c"])
+print(s)
+
+# Adding element to the set
+s.add("d")
+print(s)
+
+# adding
+s = {"a", "b", "c"}
+s.add("d")
+print(s)
+
+#Union
+a = {"x", "y"}
+b = {"y", "z"}
+u = a.union(b)
+print(u)
+
+# Intersection
+a = {1, 2, 3}
+b = {2, 3, 4}
+i = a.intersection(b)
+print(i)
+
+#Set differenc
+a = {1, 2, 3}
+b = {2, 3, 4}
+d = a.difference(b)
+print(d)
+
+# cleaning Set
+s = {1, 2, 3}
+s.clear()
+print(s)
+
+
+# copy method
+s = {1, 2, 3}
+c = s.copy()
+print(c)        
+
+# Frozen set
+s = frozenset([1, 2, 3])
+print(s)
+
+# Symmetry Difference
+A = {1, 2, 3, 4}
+B = {3, 4, 5, 6}
+
+# Using '^' operator
+res1 = A ^ B
+print("using '^':", res1)
+
+# Using symmetric_difference() method
+res2 = A.symmetric_difference(B)
+print("using symmetric_difference():", res2)
+
+```
+
+<b>Task 4: </b> a. Store following word meanings in python dictionary:<br>
+        table:"a piece of furniture","list of facts & Figures"<br>
+        cat:"a small animal" <br>
+        
+        b. you are given a list of subjects for students, Assume one classroom is requireed for 1 subject. How many classrooma are needed by all students. <br>
+        "python","Java","C++","python","javascript","java","python","java","C++","C"
