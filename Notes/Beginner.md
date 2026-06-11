@@ -573,9 +573,8 @@ print("using symmetric_difference():", res2)
 
 ```
 
-<b>Task 4: </b> a. Store following word meanings in python dictionary:<br>
+<b>Task 4: </b>  a. Store following word meanings in python dictionary:<br>
         table:"a piece of furniture","list of facts & Figures"<br>
-        cat:"a small animal" <br>
-        
-        b. you are given a list of subjects for students, Assume one classroom is requireed for 1 subject. How many classrooma are needed by all students. <br>
+        cat:"a small animal" <br><br>
+        b.  you are given a list of subjects for students, Assume one classroom is requireed for 1 subject. How many classrooma are needed by all students. <br>
         "python","Java","C++","python","javascript","java","python","java","C++","C"
