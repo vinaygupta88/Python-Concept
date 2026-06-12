@@ -481,7 +481,7 @@ d = {
 
 print(d["student"]["name"])
 ```
-<h2>SET<h2>
+<h2>SET</h2>
 Set is used to store a collection of unordered items.
 
 - No duplicate elements. If you try to insert the same item again, it is ignored because sets store only unique values.
@@ -581,3 +581,102 @@ print("using symmetric_difference():", res2)
 
 ---
 ## Day 5
+<h2>Loops</h2>
+Loops are used to execute a block of code repeatedly until a condition is met or all items in a sequence are processed.
+
+- The variable used in loop is called **iterator** and number of time loop excute is call iteration.
+<h4>While loop</h4>
+While loop repeatedly executes a block of code as long as the given condition remains true. When the condition becomes false, the line immediately after the loop in the program is executed.<br>
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20260318151954555876/ff.webp" height=200px >
+
+```
+cnt = 0
+while (cnt < 3):
+    print("Hello Vinay")
+    cnt = cnt + 1
+
+Explanation:
+        cnt = 0 initializes the counter variable.
+        while (cnt < 3): runs the loop while the condition is true.
+        cnt = cnt + 1 increases the counter value by 1.
+```
+<h4>For Loop</h4>
+For loops is used to iterate over a sequence such as a list, tuple, string or range. It executes a block of code once for each item in the sequence.<br>
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20251222174008905517/forloop.webp" height=250px alt="for loop">
+
+```
+n = 4
+for i in range(0, n):
+    print(i)
+
+
+Explanation:
+        n = 4 stores the ending value for the loop.
+        range(0, n) generates numbers from 0 to 3.
+        for i in range(0, n): iterates through each number in the range.
+```
+<h4>Iterating by Index of Sequences</h4>
+A for loop can also iterate through sequence elements using their index values with the help of range() and len().
+
+```
+a = ["geeks", "for", "geeks"]
+for idx in range(len(a)):
+    print(a[idx])
+
+
+Explanation:
+        len(li) returns the total number of elements in the list.
+        range(len(li)) generates index values from 0 to 2.
+        li[index] accesses list elements using their index
+```
+<h4>Nested Loops</h4>
+A nested loop is a loop inside another loop. The inner loop executes completely for every iteration of the outer loop.
+
+```
+for i in range(1, 5):
+    for j in range(i):
+        print(i, end=' ')
+    print()
+
+Explanation:
+        Outer loop for i in range(1, 5) controls the number of rows and Inner loop for j in range(i) runs i times for each row.
+        print(i, end=' ') prints the value of i on the same line and print() moves output to the next line after each row.
+```
+<h3>Loop Control Statements</h3>
+Loop control statements in Python are special statements that help control the execution of loops (for or while). They let you modify the default behavior of the loop, such as stopping it early, skipping an iteration, or doing nothing temporarily. 
+<h4>Break Statement</h4>
+The break statement in Python is used to exit or “break” out of a loop (either a for or while loop) prematurely, before the loop has iterated through all its items or reached its condition. When the break statement is executed, the program immediately exits the loop, and the control moves to the next line of code after the loop.
+
+```
+# Using For Loop
+for i in range(5):
+    if i == 3:
+        break  # Exit the loop when i is 3
+    print(i)
+    
+# Using While Loop
+i = 0
+while i < 5:
+    if i == 3:
+        break  # Exit the loop when i is 3
+    print(i)
+    i += 1
+```
+<h4>Continue Statement </h4>
+Python Continue statement is a loop control statement that forces to execute the next iteration of the loop while skipping the rest of the code inside the loop for the current iteration only, i.e. when the continue statement is executed in the loop, the code inside the loop following the continue statement will be skipped for the current iteration and the next iteration of the loop will begin.
+
+```
+for i in range(5):
+    if i == 3:
+        continue  # Skip the rest of the code for i = 3
+    print(i)
+```
+<h4>Pass Statement</h4>
+Pass statement in Python is a null operation or a placeholder. It is used when a statement is syntactically required but we don’t want to execute any code. It does nothing but allows us to maintain the structure of our program.
+
+```
+for i in range(5):
+    if i == 3:
+        pass  # Placeholder for future code
+    print(i)
+``
