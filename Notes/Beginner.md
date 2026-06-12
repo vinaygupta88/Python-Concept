@@ -136,7 +136,7 @@ In python **input()** built inn function is used to take the input from the user
 - Result of input() is always a string. we have to type cast it to change in any other formate.
         eg:-    int(input()) for integers
                 float(input())
-<b>TASK 1 :</b>a. Write a program to input 2 numbers & print their sum, product, modulo, difference.
+<b>TASK 1 :</b>a. Write a program to input 2 numbers & print their sum, product, modulo, difference.<br>
         b. Write a programm to input side of a sqaure and print its area
 
 ## Day 2
@@ -251,8 +251,8 @@ if age >= 60:
 else:
     print("Not eligible for a senior discount.")
 ```
-<b>Task 2 </b> a. Write a program to find the greatest of 3 numbers entered by the user.
-                b. Write a program to check if a number entered by the user is odd or even.
+<b>Task 2 </b> a. Write a program to find the greatest of 3 numbers entered by the user.<br>
+                b. Write a program to check if a number entered by the user is odd or even.<br>
                 c. WAP to check if the munber is multiple of 7 or not
 
 ## Day 3
@@ -405,8 +405,8 @@ Tuples support only a few methods due to their immutable nature. The two most co
     </tr>
 </table>
 
-<b>Task 3 :</b> a. Write to ask the user to enter names of theri 3 favorite movies & store them in a list.
-                b. Write to check if a list contains a palindrome of element.(Hint: used copy() method)
+<b>Task 3 :</b> a. Write to ask the user to enter names of theri 3 favorite movies & store them in a list.<br>
+                b. Write to check if a list contains a palindrome of element.(Hint: used copy() method<br>
                 c. Write a program to count the number of students with the "A" grade in the following tuple. Store the above values in a list & sort then from "A to D".
 
 ## Day 4
@@ -679,4 +679,22 @@ for i in range(5):
     if i == 3:
         pass  # Placeholder for future code
     print(i)
-``
+```
+<h4>Range</h4>
+Range functions returns a sequence of numbers, starting from 0 by default, and increments by 1(default) and stops before a specified number.
+
+- *syntax: range(start?,stop,step?)*
+- in range function starting and step is optional but ending must be required
+- ending is not include
+- step size may be negative(-ve)
+
+```
+for el in range(5):             #ending is given, start= 0 bydefault, step =1
+    print(el)
+for el in range(1, 5):          #ending is given, start= 1 bydefault, step =1
+    print(el)
+for el in range(1, 5, 2):        #ending is given, start= 2 bydefault, step =2
+    print(el)
+```
+<b>Task 5:</b> a. Write a program to find the sum of first n numbers.(using while)<br>
+        b. Write a program to find the factorial of first n numbers(using for)
