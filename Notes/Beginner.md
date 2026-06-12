@@ -29,7 +29,7 @@ Data types are used to define the type of value stored in a variable. They deter
 - **Strings :** are used to store text data. A string is represented using the str class and can be created using single, double or triple quotes.
 - **Lists :** are ordered and mutable collections used to store multiple items in a single variable. Elements in a list can be of different data types and are accessed using indexing.
 - **Tuples :** are ordered and immutable collections used to store multiple items in a single variable. Once created, tuple elements cannot be modified and are accessed using indexing.
-- **Boolean: ** data type represents one of two values: True or False. It is mainly used in conditions and comparisons and is represented by the bool class.
+- **Boolean:** data type represents one of two values: True or False. It is mainly used in conditions and comparisons and is represented by the bool class.
 - **Sets :** are unordered and mutable collections used to store unique elements. Since sets are unordered, elements cannot be accessed using indexing. Elements are usually accessed by iterating through the set using a loop.
 - **Dictionaries :** are used to store data in key:value pairs. Each key in a dictionary must be unique and values are accessed using their keys with square brackets [] or get() method.
 ```
@@ -135,8 +135,8 @@ Example:
 In python **input()** built inn function is used to take the input from the user using KEYBOARD.
 - Result of input() is always a string. we have to type cast it to change in any other formate.
         eg:-    int(input()) for integers
-                float(input())
-<b>TASK 1 :</b>a. Write a program to input 2 numbers & print their sum, product, modulo, difference.<br>
+                float(input())<br>
+<b>TASK 1 :</b> a. Write a program to input 2 numbers & print their sum, product, modulo, difference.<br>
         b. Write a programm to input side of a sqaure and print its area
 
 ## Day 2
@@ -293,7 +293,7 @@ a = [1, 2]
 a.append(3)
 a.insert(1, 2)
 a.extend([3, 4])
-a[1] = 25                       # udating list by index value
+a[1] = 25                       # updating list by index value
 a.remove(2)
 a.pop()
 del a[1]
@@ -504,10 +504,10 @@ Example: st = {1,2,3,4,5,6,7,8,9}
 8. **frozenset():** Creates an immutable set.
 <h4>SET Operation</h4>
 
-1. Union of Sets: union() function combines two sets and returns a new set with all unique elements.
-2. Intersection of Sets: intersection() function returns a new set containing elements that are common to both sets.
-3. Difference of Sets: difference() function returns a set containing elements that are in the first set but not in the second.
-4. Symmetric Difference of sets : The symmetric difference of two sets includes elements that are in either set but not in both.
+1. **Union of Sets: union()** function combines two sets and returns a new set with all unique elements.
+2. **Intersection of Sets: intersection()** function returns a new set containing elements that are common to both sets.
+3. **Difference of Sets: difference()** function returns a set containing elements that are in the first set but not in the second.
+4. **Symmetric Difference of sets :** The symmetric difference of two sets includes elements that are in either set but not in both.
 ```
 s = {10, 50, 20}
 print(s)
@@ -696,5 +696,5 @@ for el in range(1, 5):          #ending is given, start= 1 bydefault, step =1
 for el in range(1, 5, 2):        #ending is given, start= 2 bydefault, step =2
     print(el)
 ```
-<b>Task 5:</b> a. Write a program to find the sum of first n numbers.(using while)<br>
+<b>Task 5:</b> a. Write a program to find the sum of first n natural numbers.(using while)<br>
         b. Write a program to find the factorial of first n numbers(using for)
