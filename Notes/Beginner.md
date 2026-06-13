@@ -744,3 +744,45 @@ print(evenOdd(7))
 2. User defined Functions: The function which is defined by the user's
 
 - **Return Statement :** Return is used to end a function and send a value back to the caller. It can return any data type, multiple values (packed into a tuple), or None if no value is given. Eg:- *return [expresions/value]*
+
+<h2>Recursion</h2>
+Recursion is a programming technique where a function calls itself either directly or indirectly to solve a problem. It is commonly used for:
+
+- Breaking problems into smaller subproblems
+- Mathematical calculations like factorial and Fibonacci
+- Tree and graph traversal and Divide-and-conquer algorithms
+<h4>Working of Recursion</h4>
+A recursive function calls itself in its body. Let's see basic structure of recursive function:
+
+```
+def recursive_function(parameters):
+    if base_case_condition:
+        return base_result
+    else:
+        return recursive_function(modified_parameters)
+```
+<p>Recursive function contains two key parts:</p>
+
+- **Base Case:** stopping condition that prevents infinite recursion.
+- **Recursive Case:** part of the function where it calls itself with modified parameters.
+
+```
+Example :- 
+
+def factorial(n):
+    if n == 0:  # Base case
+        return 1
+    else:       # Recursive case
+        return n * factorial(n - 1)
+
+print(factorial(5))
+```
+<h3>Types of Recursion</h3>
+
+1. **Tail Recursion:** The recursive call is the last thing the function does, so nothing happens after it returns. Some languages can optimize this to work like a loop, saving memory.
+2. **Non-Tail Recursion:** The function does more work after the recursive call returns, so it can’t be optimized into a loop.
+
+<b>Task 6 </b><br>
+
+a. Write a recursive function to calculate the sum of first n natural numbers.
+b. Write a recursive function to print all elements in a list.(hint: use list & index as parameters)
