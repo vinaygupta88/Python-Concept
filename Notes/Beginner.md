@@ -698,3 +698,49 @@ for el in range(1, 5, 2):        #ending is given, start= 2 bydefault, step =2
 ```
 <b>Task 5:</b> a. Write a program to find the sum of first n natural numbers.(using while)<br>
         b. Write a program to find the factorial of first n numbers(using for)
+
+---
+## Day 6
+<h2>Function & Recursion</h2>
+<h3>Function</h3>
+Function is block of statement that perform a specific task.Python functions are reusable blocks of code used to perform a specific task. They help organize programs into smaller sections and execute the same logic whenever needed by calling the function.<br>
+
+- Function is used to reduce redundency inside the code.
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20260515101106327905/why_use_function.webp" height=250px><br>
+
+<h5>Defining a Function</h5>
+A function can be defined using def keyword.<br>
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20260522160151242115/z_z.webp" height=250px> <br>
+
+```
+def function_name(Parameter):
+    # statement
+    # return value
+```
+
+<h5>Calling a Function</h5>
+After creating a function, call it by using the name of the functions followed by parenthesis containing parameters of that particular function.
+
+```
+fuction_name(Arguments)
+```
+
+<h5>Function Arguments</h5>
+Arguments are values passed to a function when it is called. They allow functions to receive input data and perform operations using those values.
+
+```
+def evenOdd(x):
+    if (x % 2 == 0):
+        return "Even"
+    else:
+        return "Odd"
+
+print(evenOdd(16))
+print(evenOdd(7))
+```
+<h3>Type of function</h3>
+
+1. Built-in Functions: These are the function is is already defined (pre-defined).
+2. User defined Functions: The function which is defined by the user's
+
+- **Return Statement :** Return is used to end a function and send a value back to the caller. It can return any data type, multiple values (packed into a tuple), or None if no value is given. Eg:- *return [expresions/value]*
