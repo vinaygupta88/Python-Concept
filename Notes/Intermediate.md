@@ -24,3 +24,46 @@ res = ['Even' if n % 2 == 0 else 'Odd' for n in a]
 print(res)
 ```
 ---
+<h2>Lambda Functions</h2>
+Lambda functions are small anonymous functions, meaning they do not have a defined name. These are small, short-lived functions used to pass simple logic to another function.<br>
+
+*syntax :* function_name = lambda argument :expression
+
+- Contain only one expression.
+- Result of that expression is returned automatically (no return keyword needed).
+```
+a = 'sangaButtapandu'
+upper = lambda x: x.upper()  
+print(upper(a))
+```
+- **Returning Multiple Results:** Although a lambda can contain only one expression, it can still return multiple results by combining them into a tuple.
+```calc = lambda x, y: (x + y, x * y)
+res = calc(3, 4)
+print(res)
+```
+<h4>method use by lambda</h4>
+
+1.  **filter():** This function uses a lambda expression to select elements from a list that satisfy a given condition, such as keeping only even numbers.
+2.  **map():** This function applies a lambda expression to each element and returns a map object. It can be converted to a list using list().
+3. **reduce():** This function repeatedly applies a lambda expression to elements of a list to combine them into a single result.
+```
+#Filter
+
+c = [1, 2, 3, 4, 5, 6]
+even = filter(lambda x: x % 2 == 0, c)
+print(list(even))
+
+# map
+a = [1, 2, 3, 4]
+double = map(lambda x: x * 2, a)
+print(list(double))
+
+# reduce
+
+from functools import reduce
+a = [1, 2, 3, 4]
+mul = reduce(lambda x, y: x * y, a)
+print(mul)
+```
+
+<h2>Iterators & Generators</h2>
