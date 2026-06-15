@@ -257,3 +257,17 @@ student = {
 with open("student.json", "w") as file:
     json.dump(student, file, indent=4)
 ```
+<b>Task 8: </b><br>
+    a. Create a new file "practice.txt" using python . Add the following data inn it-<br>
+        ```
+        Hi everyone 
+        we are learning File I/O
+        using Python
+        I like programming in Python
+        ``` 
+    <br>        
+    b. Write a function that replace all occurance of "python" with "java" in above file.<br>
+    c. Search if the word "learninng" exists in the file or not.
+
+---
+## Day 9
