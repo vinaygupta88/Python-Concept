@@ -101,3 +101,159 @@ Explanation:
     * Each next() call resumes the function from where it stopped.
     * Values are produced only when needed.
 ```
+---
+## Day 8
+<h2>File Handling (File I/O)</h2>
+File handling refers to the process of performing operations on a file, such as creating, opening, reading, writing and closing it through a programming interface.
+
+- Store data permanently, even after the program ends.
+- Access external files like .txt, .csv, .json, etc.
+- Process large files efficiently without using much memory.
+- Automate tasks like reading configs or saving outputs.<br>
+<b>Type of File :</b><br>
+    a. Text Files: .txt, .docx, .log, .csv etc.<br>
+    b. Binary Files: .mp4, .mov, .png, .jpeg etc.<br>
+<b>Mode in File Handling</b><br>
+    a. **Read** ('r'): Read-only. Raises I/O error if file doesn't exist. <br>
+    b. **Write** ('w'): Write-only. Overwrites file if it exists, else creates a new one. <br>
+    c. **Append** ('a'): Append-only. Adds data to end. Creates file if it doesn't exist. <br>
+    d. **Binary** ('b'): Used for non-text files like images or audio. Always combined with 'r', 'w', or 'a. <br>
+    e. **Read and Write** ('r+'): Read and write. Raises I/O error if the file does not exist. <br>
+    f. **Write and Read** ('w+'): Read and write. Overwrites file or creates new one.
+    g. **Read** ('r'): Read-only. Raises I/O error if file doesn't exist. <br>
+<h4>Operation in File Handling</h4>
+
+1. **open() :** This operation is done before reading and writing the file. This required file path and mode as arguments.<br>
+    *Syntax :* file_object = open("file_name","mode") <br>
+    * if file is in same location then only name is required else complete file path is required.
+    * mode in which you want to open the file (read, write, append, etc.)
+2. **close() :** close() method closes the file and releases the system resources. If the file was opened in write or append mode, closing ensures that all changes are properly saved.<br>
+    *syntax :* file_object.close()
+3. **Reading file :** Used to read the file, there are three methods:-<br>
+    a. read(): The read() method returns the whole text, but you can also specify how many characters you want to return. <br>
+    b. readline() : It return one line. <br>
+    c. readlines(): It return the list of all line.<br>
+4. **Writing file :** This creates a new file if it doesn’t exist, or overwrites the existing file if it does. The write() method is used to add content. After writing, make sure to close the file. <br>
+    a. write() : used to write singl string in file <br>
+    b. writelines() : Writes multiple strings from a list to a file.
+5. **Using with Statement**: Instead of manually opening and closing the file, you can use the with statement, which automatically handles closing. This reduces the risk of file corruption and resource leakage.<br>
+```
+with open("geek.txt", "r") as file:
+    content = file.read()
+    print(content)
+```
+- <b>tell() : </b> Returns current cursor position.
+- <b>seek() : </b> Moves cursor position.
+```
+with open("data.txt", "r") as file:
+    print(file.tell())
+```
+```
+# 1. OPEN FILE IN READ MODE
+file = open("sample.txt", "r")
+print(file.read())
+file.close()
+
+# 2. OPEN FILE IN WRITE MODE (OVERWRITES CONTENT)
+file = open("sample.txt", "w")
+file.write("Hello Python")
+file.close()
+
+# 3. OPEN FILE IN APPEND MODE
+file = open("sample.txt", "a")
+file.write("\nNew Line Added")
+file.close()
+
+# 4. CREATE NEW FILE USING x MODE
+file = open("newfile.txt", "x")
+file.close()
+
+# 5. READ ENTIRE FILE
+with open("sample.txt", "r") as file:
+    content = file.read()
+    print(content)
+
+# 6. READ FIRST 10 CHARACTERS
+with open("sample.txt", "r") as file:
+    print(file.read(10))
+
+# 7. READ ONE LINE
+with open("sample.txt", "r") as file:
+    print(file.readline())
+
+# 8. READ ALL LINES AS LIST
+with open("sample.txt", "r") as file:
+    lines = file.readlines()
+    print(lines)
+
+# 9. WRITE MULTIPLE LINES
+with open("sample.txt", "w") as file:
+    file.writelines([
+        "Apple\n",
+        "Banana\n",
+        "Mango\n"
+    ])
+
+
+# 10. FILE PROPERTIES
+with open("sample.txt", "r") as file:
+    print("Name :", file.name)
+    print("Mode :", file.mode)
+    print("Closed :", file.closed)
+
+# 11. EXCEPTION HANDLING
+try:
+    with open("unknown.txt", "r") as file:
+        print(file.read())
+
+except FileNotFoundError:
+    print("File Not Found")
+
+
+# 12. DELETE FILE
+import os
+
+if os.path.exists("sample.txt"):
+    os.remove("sample.txt")
+    print("File Deleted")
+else:
+    print("File Not Found")
+
+# 13. RENAME FILE
+import os
+
+os.rename("old.txt", "new.txt")
+
+
+# 14. WRITE BINARY FILE
+with open("binary.bin", "wb") as file:
+    file.write(b"Hello World")
+
+# 15. READ BINARY FILE
+with open("binary.bin", "rb") as file:
+    data = file.read()
+    print(data)
+
+
+# 16. CSV FILE WRITING
+import csv
+
+with open("students.csv", "w", newline="") as file:
+    writer = csv.writer(file)
+
+    writer.writerow(["ID", "Name"])
+    writer.writerow([1, "Rahul"])
+    writer.writerow([2, "Aman"])
+
+# 21. JSON FILE WRITING
+import json
+
+student = {
+    "id": 1,
+    "name": "Rahul",
+    "age": 20
+}
+
+with open("student.json", "w") as file:
+    json.dump(student, file, indent=4)
+```
