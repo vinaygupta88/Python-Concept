@@ -271,3 +271,63 @@ with open("student.json", "w") as file:
 
 ---
 ## Day 9
+<h2>Object Oriented Programming (OOPS)</h2>
+Python is an object-oriented language, allowing you to structure your code using classes and objects for better organization and reusability.<br>
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20260605123244175152/object_oriented_programming.webp" height=250px><br>
+
+<h5>Class</h5>
+A class is a collection of objects. Classes are blueprints for creating objects. A class defines a set of attributes and methods that the created objects (instances) can have.
+    
+- Classes are created by keyword class.
+- Attributes are the variables that belong to a class.
+- Attributes are always public and can be accessed using the dot (.) operator. Example: Myclass.Myattribute
+```
+class Dog:
+    species = "Canine"  # Class attribute
+
+    def __init__(self, name, age):
+        self.name = name  # Instance attribute
+        self.age = age  # Instance attribute
+```
+<h5>Objects</h5>
+An Object is an instance of a Class. It represents a specific implementation of the class and holds its own data. An object consists of:
+
+- State: represented by the attributes and reflects the properties of an object.
+- Behavior: represented by the methods of an object and reflects the response of an object to other objects.
+- Identity: gives a unique name to an object and enables one object to interact with other objects.
+
+```
+class Dog:
+    species = "Canine"  # Class attribute
+
+    def __init__(self, name, age):
+        self.name = name  # Instance attribute
+        self.age = age  # Instance attribute
+
+# Creating an object of the Dog class
+dog1 = Dog("Buddy", 3)
+print(dog1.name) 
+print(dog1.species)
+```
+<p>Any objects is delete by using 'del' keywords Ex:- del person <br>
+<h5> __init__() </h5>
+All classes have a built-in method called __init__(), which is always executed when the class is being initiated.<br>
+The __init__() method is used to assign values to object properties, or to perform operations that are necessary when the object is being created.
+
+- init function use alway "self" argument as reference <br>
+The self parameter is a reference to the current instance of the class.<br>
+It is used to access properties and methods that belong to the class.
+```
+class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+  def greet(self):
+    print(f'{sel.name} good morning')
+
+p1 = Person("Emil", 36)
+
+print(p1.name)
+print(p1.age)
+p1.greet()
+```
