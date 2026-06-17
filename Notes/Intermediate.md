@@ -331,3 +331,107 @@ print(p1.name)
 print(p1.age)
 p1.greet()
 ```
+<br>
+<table>
+    <thead>
+        <tr>
+            <th>Aspect</th>
+            <th>Class Attributes</th>
+            <th>Instance Attributes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Definition</td>
+            <td>Defined within the class block but outside of methods</td>
+            <td>Defined within methods, typically the <code>__init__</code> constructor</td>
+        </tr>
+        <tr>
+            <td>Scope</td>
+            <td>Shared among all instances of the class</td>
+            <td>Specific to each instance of the class</td>
+        </tr>
+        <tr>
+            <td>Access</td>
+            <td>Accessed using the class name or any instance</td>
+            <td>Accessed using an instance of the class</td>
+        </tr>
+        <tr>
+            <td>Modification</td>
+            <td>Changing affects all instances of the class</td>
+            <td>Changing affects only the specific instance</td>
+        </tr>
+        <tr>
+            <td>Storage Location</td>
+            <td>Stored in the class namespace</td>
+            <td>Stored in the instance namespace</td>
+        </tr>
+        <tr>
+            <td>Usage</td>
+            <td>Define properties common to all instances</td>
+            <td>Define properties specific to each instance</td>
+        </tr>
+        <tr>
+            <td>Example</td>
+            <td><code>MyClass.class_attribute</code></td>
+            <td><code>instance_name.instance_attribute</code></td>
+        </tr>
+    </tbody>
+</table>
+
+<b>Task 9 :</b><br>
+    Create a class called Rectangle, Add an __init__ method with width and height, and store them as properties, Add a method called area that returns the width multiplied by the height, Create an object r1 with width 5 and height 3, Print the area of r1. <br>
+
+---
+
+## Day 10
+<h2>Methods</h2>
+Methods are functions that belong to a class. They define the behavior of objects created from the class.<br>
+
+```
+class Person:
+  def __init__(self, name):
+    self.name = name
+
+  def greet(self):
+    print("Hello, my name is " + self.name)
+
+p1 = Person("Emil")
+p1.greet()
+
+
+## Methods with Parameters
+class Calculator:
+  def add(self, a, b):
+    return a + b
+
+  def multiply(self, a, b):
+    return a * b
+
+calc = Calculator()
+print(calc.add(5, 3))
+print(calc.multiply(4, 7))
+```
+<h6>Static Methods</h6>
+A static method in Python is a method defined inside a class that does not depend on any instance or class data. It is used when a function logically belongs to a class but does not need access to self or cls. Static methods help organize related utility functions inside a class without creating objects.<br>
+
+```
+syntax:
+    class ClassName:
+       @staticmethod                    #decoder
+       def method_name(parameters):    
+            method_body
+
+Example: 
+class Calc:
+    @staticmethod           # @staticmethod: Declares the method as static
+    def add(a, b):
+        return a + b
+
+res = Calc.add(2, 3)        # Normal function arguments (no self or cls)
+print(res)
+```
+<b>Task 10 :</b><br>
+Using staticmethod design a simple calculator
+
+---
