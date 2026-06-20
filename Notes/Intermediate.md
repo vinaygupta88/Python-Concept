@@ -434,4 +434,84 @@ print(res)
 <b>Task 10 :</b><br>
 Using staticmethod design a simple calculator
 
+<h5>Basic Terminology</h5>
+
+- **'del'** Used to delete object properties or object itself.<br>
+    Eg:- [ del s1.name ] or [ del s1]
+- **Private attribute :** These are ment to be used only within the class and are not accessible from outside the class. <br>
+making the attribute private, we can use (__) double underscore.
+
+```
+# Private Attribute 
+class Student:
+    name = "Lokesh Singh" 
+    __id = 1234  
+    
+    # Method for Printing Private Attribute
+    def Print_Id(self):
+        print(f"The Id of student is : {self.__id}")
+    
+lokesh = Student()
+print(f"The name of student is : {lokesh.name}")  # Public Attribute can be accessed directly from outside class
+
+lokesh.Print_Id()
+```
+
+- **Private Methods :**  Private methods are those methods that should neither be accessed outside the class nor by any base class.
+
+```
+# Creating a class
+class A:
+
+    # Declaring public method
+    def fun(self):
+        print("Public method")
+
+    # Declaring private method
+    def __fun(self):
+        print("Private method")
+
+
+# Driver's code
+obj = A()
+
+# Calling the private member
+# through name mangling
+obj._A__fun()
+```
 ---
+## Day 11
+<h2>Four Pillars of OOPs</h2>
+<h3>Inheritance</h3>
+<h3>Polymorphism</h3>
+<h3>Encapsulation</h3>
+
+<h3>Abstraction</h3>
+Abstraction is the process of hiding implementation details and exposing only the essential functionality to the user. It is used to hide the implementation details from the user and expose only necessary parts, making the code simpler and easier to interact with.<br>
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20260520171243990924/data_abstraction.webp" height=250px><br>
+
+- **Abstract Base Class (ABC)** is used to achieve data abstraction by defining a common interface for its subclasses. It cannot be instantiated directly and serves as a blueprint for other classes.<br>
+
+Abstract classes are created using abc module and @abstractmethod decorator, allowing developers to enforce method implementation in subclasses while hiding complex internal logic.
+
+```
+from abc import ABC, abstractmethod
+
+class Greet(ABC):
+    @abstractmethod
+    def say_hello(self):
+        pass  # Abstract method
+
+class English(Greet):
+    def say_hello(self):
+        return "Hello!"
+
+g = English()
+print(g.say_hello())
+```
+- **Abstract methods** are method declarations without a body defined inside an abstract class. They act as placeholders that force subclasses to provide their own specific implementation, ensuring consistent structure across derived classes.
+- **Concrete methods** are fully implemented methods within an abstract class. Subclasses can inherit and use them directly, promoting code reuse without needing to redefine common functionality.
+- **Abstract properties** work like abstract methods but are used for properties. These properties are declared with @property decorator and marked as abstract using @abstractmethod. Subclasses must implement these properties.
+- 
+<b>Task Abstraction:</b>
+Create Account class with 2 attribute - balance and acoount_no. Create methods for debit,credit & printing the balance.
