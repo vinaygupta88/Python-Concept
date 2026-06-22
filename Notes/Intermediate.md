@@ -483,6 +483,73 @@ obj._A__fun()
 ## Day 11
 <h2>Four Pillars of OOPs</h2>
 <h3>Inheritance</h3>
+Inheritance is a fundamental concept in object-oriented programming (OOP) that allows a class (called a child or derived class) to inherit attributes and methods from another class (called a parent or base class). <br>
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20260522161333480012/animal_class.webp" height=250px alt="Inheritance"> <br>
+
+```
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def info(self):
+        print("Animal name:", self.name)
+
+class Dog(Animal):
+    def sound(self):
+        print(self.name, "barks")
+
+d = Dog("Buddy")
+# Inherited method
+d.info()     
+d.sound()
+
+
+Explanation: 
+    * class Animal defines the parent class.
+    * info() prints the name of the animal.
+    * class Dog(Animal) defines Dog as a child of Animal class.
+    * d.info() calls parent method info() and d.sound() calls child method
+```
+<h5>Benefits Of Inheritance</h5>
+
+- Promotes code reusability by sharing attributes and methods across classes.
+- Models real-world hierarchies like Animal -> Dog or Person -> Employee.
+- Simplifies maintenance through centralized updates in parent classes.
+- Enables method overriding for customized subclass behavior.
+- Supports scalable, extensible design using polymorphism.
+
+<h4>super() Function</h4>
+super() function is used to call methods from a superclass following Python’s Method Resolution Order (MRO). In particular, it is commonly used in the child class's __init__() method to initialize inherited attributes. This way, the child class can leverage the functionality of the parent class.
+
+```
+# Parent Class: Animal
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def info(self):
+        print("Animal name:", self.name)
+
+# Child Class: Dog
+class Dog(Animal):
+    def __init__(self, name, breed):
+        # Calls constructor based on MRO
+        super().__init__(name)  
+        self.breed = breed
+
+    def details(self):
+        print(self.name, "is a", self.breed)
+
+d = Dog("Buddy", "Golden Retriever")
+d.info()      # Parent method
+d.details()   # Child method
+
+Explanation:
+    * super() function is used inside __init__() method of Dog to call the constructor of Animal and initialize inherited attribute (name).
+
+    * This ensures that parent class functionality is reused without needing to rewrite the code in the child class.
+```
+
 <h3>Polymorphism</h3>
 <h3>Encapsulation</h3>
 
