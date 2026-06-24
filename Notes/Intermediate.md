@@ -549,6 +549,29 @@ Explanation:
 
     * This ensures that parent class functionality is reused without needing to rewrite the code in the child class.
 ```
+<h5>Method Overriding in Inheritance</h5>
+Method overriding allows a child class to provide its own implementation of a method that already exists in the parent class. This enables customized behavior while still maintaining the inheritance relationship.
+
+```
+class Animal:
+    def sound(self):
+        print("Animal sound")
+
+class Dog(Animal):
+    def sound(self):
+        print("Bark")
+
+d = Dog()
+d.sound()
+
+
+Explanation:
+
+   * Animal defines a method sound().
+   * Dog inherits from Animal and overrides the sound() method.
+   * When d.sound() is called, Python executes the overridden method in the child class instead of the parent class method.
+```
+
 
 <h3>Polymorphism</h3>
 <h3>Encapsulation</h3>
