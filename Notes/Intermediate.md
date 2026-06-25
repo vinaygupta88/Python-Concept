@@ -571,8 +571,63 @@ Explanation:
    * Dog inherits from Animal and overrides the sound() method.
    * When d.sound() is called, Python executes the overridden method in the child class instead of the parent class method.
 ```
+<h4>Types of Inheritance in Python</h4>
+Types of Inheritance depend upon the number of child and parent classes involved. There are four types of inheritance in Python<br><img src="https://media.geeksforgeeks.org/wp-content/uploads/20220707180832/typesofinheritance.gif" height=300px alt="Type of inheritance"><br>
 
+<h6>Single Inheritance : </h6>
+Single inheritance enables a derived class to inherit properties from a single parent class, thus enabling code reusability and the addition of new features to existing code.
 
+```
+                    B ------> A
+                
+# Base class
+class Parent:
+    def func1(self):
+        print("This function is in parent class.")
+
+# Derived class
+class Child(Parent):
+    def func2(self):
+        print("This function is in child class.")
+
+# Driver code
+obj = Child()
+obj.func1()
+obj.func2()
+```
+<h6>Multiple Inheritance :</h6>
+When a class can be derived from more than one base class this type of inheritance is called multiple inheritances. In multiple inheritances, all the features of the base classes are inherited into the derived class. <img src="https://media.geeksforgeeks.org/wp-content/uploads/20251009172626954371/MultipleInheritance.webp" height=200px alt="multiple inheritance">
+
+```
+
+# Base class 1
+class Mother:
+    mothername = ""
+
+    def mother(self):
+        print(self.mothername)
+
+# Base class 2
+class Father:
+    fathername = ""
+
+    def father(self):
+        print(self.fathername)
+
+# Derived class
+class Son(Mother, Father):
+    def parents(self):
+        print("Father :", self.fathername)
+        print("Mother :", self.mothername)
+
+# Driver code
+s1 = Son()
+s1.fathername = "RAM"
+s1.mothername = "SITA"
+s1.parents()
+```
+<h6></h6>
+<h6></h6>
 <h3>Polymorphism</h3>
 <h3>Encapsulation</h3>
 
