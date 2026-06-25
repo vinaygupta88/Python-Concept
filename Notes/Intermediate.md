@@ -574,7 +574,7 @@ Explanation:
 <h4>Types of Inheritance in Python</h4>
 Types of Inheritance depend upon the number of child and parent classes involved. There are four types of inheritance in Python<br><img src="https://media.geeksforgeeks.org/wp-content/uploads/20220707180832/typesofinheritance.gif" height=300px alt="Type of inheritance"><br>
 
-<h6>Single Inheritance : </h6>
+<h5>Single Inheritance : </h5>
 Single inheritance enables a derived class to inherit properties from a single parent class, thus enabling code reusability and the addition of new features to existing code.
 
 ```
@@ -595,7 +595,7 @@ obj = Child()
 obj.func1()
 obj.func2()
 ```
-<h6>Multiple Inheritance :</h6>
+<h5>Multiple Inheritance :</h5>
 When a class can be derived from more than one base class this type of inheritance is called multiple inheritances. In multiple inheritances, all the features of the base classes are inherited into the derived class.<br> <img src="https://media.geeksforgeeks.org/wp-content/uploads/20251009172626954371/MultipleInheritance.webp" height=200px alt="multiple inheritance">
 
 ```
@@ -626,8 +626,143 @@ s1.fathername = "RAM"
 s1.mothername = "SITA"
 s1.parents()
 ```
-<h6></h6>
-<h6></h6>
+<h5>Multilevel Inheritance :</h5>
+In multilevel inheritance, features of the base class and the derived class are further inherited into the new derived class. This is similar to a relationship representing a child and a grandfather.<br>
+
+```
+# Base class
+class Grandfather:
+    def __init__(self, grandfathername):
+        self.grandfathername = grandfathername
+
+# Intermediate class
+class Father(Grandfather):
+    def __init__(self, fathername, grandfathername):
+        self.fathername = fathername
+        # Call the constructor of Grandfather
+        Grandfather.__init__(self, grandfathername)
+
+# Derived class
+class Son(Father):
+    def __init__(self, sonname, fathername, grandfathername):
+        self.sonname = sonname
+        # Call the constructor of Father
+        Father.__init__(self, fathername, grandfathername)
+
+    def print_name(self):
+        print('Grandfather name :', self.grandfathername)
+        print('Father name :', self.fathername)
+        print('Son name :', self.sonname)
+
+# Driver code
+s1 = Son('Prince', 'Rampal', 'Lal mani')
+print(s1.grandfathername)
+s1.print_name()
+```
+<h5>Hierarchical Inheritance :</h5>
+When more than one derived class are created from a single base this type of inheritance is called hierarchical inheritance. In this program, we have a parent (base) class and two child (derived) classes. <br><img src="https://media.geeksforgeeks.org/wp-content/uploads/20251009172317410936/HierarchicalInheritance.webp" height=150px alt="Hierarchical Inheritance">
+
+```
+# Base class
+class Parent:
+    def func1(self):
+        print("This function is in parent class.")
+
+# Derived class 1
+class Child1(Parent):
+    def func2(self):
+        print("This function is in child 1.")
+
+# Derived class 2
+class Child2(Parent):
+    def func3(self):
+        print("This function is in child 2.")
+
+# Driver code
+object1 = Child1()
+object2 = Child2()
+
+object1.func1()
+object1.func2()
+object2.func1()
+object2.func3()
+```
+<h5>Hybrid Inheritance :</h5>
+Hybrid inheritance is a combination of more than one type of inheritance. It uses a mix like single, multiple, or multilevel inheritance within the same program. Python's method resolution order (MRO) handles such cases.<br>
+
+```
+# Base class
+class School:
+    def func1(self):
+        print("This function is in school.")
+
+# Derived class 1 (Single Inheritance)
+class Student1(School):
+    def func2(self):
+        print("This function is in student 1.")
+
+# Derived class 2 (Another Single Inheritance)
+class Student2(School):
+    def func3(self):
+        print("This function is in student 2.")
+
+# Derived class 3 (Multiple Inheritance)
+class Student3(Student1, School):
+    def func4(self):
+        print("This function is in student 3.")
+
+# Driver code
+obj = Student3()
+obj.func1()
+obj.func2()
+```
+<h4>Method Resolution Order in Python Inheritance [MRO]</h4>
+Method Resolution Order (MRO) defines the order in which Python searches for a method in a class and its parent classes. It becomes important when the same method exists in more than one class in an inheritance chain, especially in multiple inheritance.
+
+he example shows how Python decides which method to execute when both a parent and a child class have a method with the same name.
+
+```
+class A:
+    def fun(self):
+        print("In class A")
+
+class B(A):
+    def fun(self):
+        print("In class B")
+
+a = B()
+a.fun()
+
+Explanation:
+       * When obj.fun() is called, Python first looks in class B.
+       * Since B defines fun(), it runs that method and does not check class A.
+       * The MRO here is: B -> A.
+
+----
+Multiple Inheritance (Diamond Problem)
+
+class A:
+    def fun(self):
+        print("In class A")
+
+class B(A):
+    def fun(self):
+        print("In class B")
+
+class C(A):
+    def fun(self):
+        print("In class C")
+
+class D(B, C):
+    pass
+
+a = D()
+a.fun()
+
+
+```
+---
+## Day 12
 <h3>Polymorphism</h3>
 <h3>Encapsulation</h3>
 
