@@ -596,7 +596,7 @@ obj.func1()
 obj.func2()
 ```
 <h6>Multiple Inheritance :</h6>
-When a class can be derived from more than one base class this type of inheritance is called multiple inheritances. In multiple inheritances, all the features of the base classes are inherited into the derived class. <img src="https://media.geeksforgeeks.org/wp-content/uploads/20251009172626954371/MultipleInheritance.webp" height=200px alt="multiple inheritance">
+When a class can be derived from more than one base class this type of inheritance is called multiple inheritances. In multiple inheritances, all the features of the base classes are inherited into the derived class.<br> <img src="https://media.geeksforgeeks.org/wp-content/uploads/20251009172626954371/MultipleInheritance.webp" height=200px alt="multiple inheritance">
 
 ```
 
