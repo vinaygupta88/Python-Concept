@@ -764,6 +764,13 @@ a.fun()
 ---
 ## Day 12
 <h3>Polymorphism</h3>
+Polymorphism means "many forms" and allows the same method, function or operator to behave differently depending on the object or data it works with. 
+
+<h4>Types of Polymorphism</h4>
+Polymorphism refers to the ability of the same method or operation to behave differently based on object or context. It mainly includes compile-time and runtime polymorphism. <br>
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20250924155521774996/polymorphism_in_java.webp" height=250px alt="Type of polymorphism"><br>
+
+
 <h3>Encapsulation</h3>
 
 <h3>Abstraction</h3>
