@@ -771,6 +771,91 @@ Polymorphism refers to the ability of the same method or operation to behave dif
 <img src="https://media.geeksforgeeks.org/wp-content/uploads/20250924155521774996/polymorphism_in_java.webp" height=250px alt="Type of polymorphism"><br>
 
 
+<h4>Compile-time Polymorphism</h4>
+Compile-time polymorphism involves selecting a method or operation before program execution, typically through method or operator overloading.
+
+```
+class Calculator:
+    def multiply(self, a=1, b=1, *args):
+        result = a * b
+        for num in args:
+            result *= num
+        return result
+
+# Create object
+calc = Calculator()
+
+# Using default arguments
+print(calc.multiply())            
+print(calc.multiply(4))           
+
+# Using multiple arguments
+print(calc.multiply(2, 3))       
+print(calc.multiply(2, 3, 4))
+
+```
+<h4>Runtime Polymorphism (Overriding)</h4>
+Runtime polymorphism means that the behavior of a method is decided while program is running, based on the object calling it. This happens through Method Overriding a child class provides its own version of a method already defined in the parent class.
+
+```
+class Animal:
+    def sound(self):
+        return "Some generic sound"
+
+class Dog(Animal):
+    def sound(self):
+        return "Bark"
+
+class Cat(Animal):
+    def sound(self):
+        return "Meow"
+
+# Polymorphic behavior
+animals = [Dog(), Cat(), Animal()]
+for animal in animals:
+    print(animal.sound())
+
+```
+<h4>Polymorphism in Built-in Functions</h4>
+Python's built-in functions such as len() and max() are polymorphic because they work with different data types and return results based on type of object passed. This showcases it's dynamic nature, where same function name adapts its behavior depending on input.
+
+```
+print(len("Hello"))  # String length
+print(len([1, 2, 3]))  # List length
+
+print(max(1, 3, 2))  # Maximum of integers
+print(max("a", "z", "m"))  # Maximum in strings
+
+```
+
+<h4>Polymorphism in Functions</h4>
+Polymorphism allows functions to work with different object types as long as they support the required behavior. Using duck typing, it focuses on whether an object has the required methods rather than its type, enabling flexible and reusable code.
+
+```
+class Pen:
+    def use(self):
+        return "Writing"
+
+class Eraser:
+    def use(self):
+        return "Erasing"
+
+def perform_task(tool):
+    print(tool.use())
+
+perform_task(Pen())
+perform_task(Eraser())
+```
+
+<h4>Polymorphism in Operators</h4>
+Same operator (+) can perform different tasks depending on operand types. This is known as operator overloading. This flexibility is a key aspect of polymorphism.
+
+```
+print(5 + 10)  # Integer addition
+print("Hello " + "World!")  # String concatenation
+print([1, 2] + [3, 4])  # List concatenation
+```
+
 <h3>Encapsulation</h3>
 
 <h3>Abstraction</h3>
