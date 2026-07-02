@@ -855,6 +855,21 @@ print(5 + 10)  # Integer addition
 print("Hello " + "World!")  # String concatenation
 print([1, 2] + [3, 4])  # List concatenation
 ```
+<h4>Method Overriding</h4>
+Method overriding occurs when a child class defines a method with the same name as a method in its parent class. This allows the child class to provide its own implementation while retaining the inheritance relationship. It is commonly used to customize or extend the behavior of inherited methods.
+
+```
+class Animal:
+    def display(self):
+        print("This is an animal")
+
+class Dog(Animal):
+    def display(self):
+        print("This is a dog")
+
+obj = Dog()
+obj.display()
+```
 
 <h3>Encapsulation</h3>
 
