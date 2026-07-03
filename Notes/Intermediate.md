@@ -870,8 +870,79 @@ class Dog(Animal):
 obj = Dog()
 obj.display()
 ```
-
+---
+## Day 13
 <h3>Encapsulation</h3>
+It refers to bundling data (attributes) and methods (functions) that operate on that data into a single unit (class) and restricting direct access to some of an object's internal details.<br>
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20260522161654499472/encapsulation_in_python.webp" height=250px alt="encapsulation"><br>
+
+```
+class Employee:
+    def __init__(self, name, salary):
+        self.name = name          # public attribute
+        self.__salary = salary    # private attribute
+
+emp = Employee("Fedrick", 50000)
+print(emp.name)       
+print(emp.__salary)
+```
+
+- Protects data from unauthorized access and accidental modification.
+- Controls data updates using getter/setter methods with validation.
+- Enhances modularity by hiding internal implementation details.
+- Simplifies maintenance through centralized data handling logic.
+- Reflects real-world scenarios like restricting direct access to a bank account balance.
+
+<h5>Access Specifiers</h5>
+Access specifiers define how class members (variables and methods) can be accessed from outside the class. They help in implementing encapsulation by controlling the visibility of data. There are three types of access specifiers:<br>
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20250710130248628645/types_of_access_modifier.webp" height=200px alt="access specifiers"><br>
+
+1. **Public Members :** Public members are variables or methods that can be accessed from anywhere inside the class, outside the class or from other modules. By default, all members in Python are public. They are defined without any underscore prefix (e.g., self.name).
+
+```
+class Employee:
+    def __init__(self, name):
+        self.name = name   # public attribute
+
+    def display_name(self):   # public method
+        print(self.name)
+
+emp = Employee("John")
+emp.display_name()   # Accessible
+print(emp.name)      # Accessible
+```
+2. **Protected members :** Protected members are variables or methods that are intended to be accessed only within the class and its subclasses. They are not strictly private but should be treated as internal. In Python, protected members are defined with a single underscore prefix (e.g., self._name).
+
+```
+class Employee:
+    def __init__(self, name, age):
+        self.name = name       # public
+        self._age = age        # protected
+
+class SubEmployee(Employee):
+    def show_age(self):
+        print("Age:", self._age)   # Accessible in subclass
+
+emp = SubEmployee("Ross", 30)
+print(emp.name)        # Public accessible
+emp.show_age()         # Protected accessed through subclass
+```
+3. **Private members :** Private members are variables or methods that cannot be accessed directly from outside the class. They are used to restrict access and protect internal data. In Python, private members are defined with a double underscore prefix (e.g., self.__salary).
+
+```
+class Employee:
+    def __init__(self, name, salary):
+        self.name = name          # public
+        self.__salary = salary    # private
+
+    def show_salary(self):
+        print("Salary:", self.__salary)
+
+emp = Employee("Robert", 60000)
+print(emp.name)          # Public accessible
+emp.show_salary()        # Accessing private correctly
+# print(emp.__salary)    # Error: Not accessible directly
+```
 
 <h3>Abstraction</h3>
 Abstraction is the process of hiding implementation details and exposing only the essential functionality to the user. It is used to hide the implementation details from the user and expose only necessary parts, making the code simpler and easier to interact with.<br>
