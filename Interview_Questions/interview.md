@@ -251,3 +251,38 @@ class Dog(Animal):
 obj = Dog()
 obj.speak()
 </code></pre>
+
+<h2>Extra Advanced Questions</h2>
+
+<h3>What is the difference between instance method, class method, and static method?</h3>
+<p>An instance method works with an object instance, a class method works with the class itself, and a static method does not depend on the instance or class. They are defined using @classmethod and @staticmethod.</p>
+
+<h3>What is __init__ in Python classes?</h3>
+<p>__init__ is a special method called automatically when an object is created. It initializes the object’s attributes.</p>
+
+<h3>What is the difference between shallow copy and deep copy?</h3>
+<p>A shallow copy creates a new object but references the same nested objects. A deep copy creates a new copy of the nested objects as well. This is important when working with nested lists or dictionaries.</p>
+
+<h3>What are iterators and generators?</h3>
+<p>An iterator is an object that can be iterated over, while a generator is a function that yields values one at a time, saving memory for large datasets.</p>
+
+<h3>What is the use of *args and **kwargs?</h3>
+<p>*args allows a function to accept a variable number of positional arguments, and **kwargs allows it to accept a variable number of keyword arguments.</p>
+
+<h3>What are decorators in Python?</h3>
+<p>Decorators are used to modify or enhance functions or methods without changing their source code. They are often used for logging, access control, and performance tracking.</p>
+
+<h3>What is the difference between local and global variables?</h3>
+<p>A local variable is defined inside a function and is accessible only there. A global variable is defined outside a function and can be used across the program.</p>
+
+<h3>What is method overriding?</h3>
+<p>Method overriding happens when a child class defines a method that already exists in its parent class. The child version is used when the method is called on the child object.</p>
+
+<h3>What is encapsulation, abstraction, and inheritance?</h3>
+<p>Encapsulation hides internal details of an object, abstraction focuses on essential features while ignoring implementation details, and inheritance allows a class to reuse methods and attributes from another class.</p>
+
+<h3>What is a module in Python?</h3>
+<p>A module is a Python file containing reusable code. It can be imported using the import keyword to use functions, classes, and variables defined elsewhere.</p>
+
+<h3>Tips for interview preparation</h3>
+<p>To prepare well for a Python interview, practice basic syntax, data structures, loops, functions, recursion, OOP, and exception handling. Also, write small code snippets and explain them clearly during the interview.</p>
