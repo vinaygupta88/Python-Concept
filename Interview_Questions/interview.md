@@ -286,3 +286,198 @@ obj.speak()
 
 <h3>Tips for interview preparation</h3>
 <p>To prepare well for a Python interview, practice basic syntax, data structures, loops, functions, recursion, OOP, and exception handling. Also, write small code snippets and explain them clearly during the interview.</p>
+
+<h2>Additional Questions Frequently Asked in Interviews or Exams</h2>
+
+<h3>31. What is a keyword in Python? Give some examples.</h3>
+<p>A keyword is a reserved word in Python that has a special meaning and cannot be used as an identifier. Examples: if, else, for, while, def, class, return, True, False, None.</p>
+
+<h3>32. What is the difference between is and == in Python?</h3>
+<p>The == operator compares values, while is compares object identity. Two variables may have the same value but different memory references.</p>
+
+<pre><code>a = [1, 2, 3]
+b = [1, 2, 3]
+print(a == b)   # True
+print(a is b)   # False
+</code></pre>
+
+<h3>33. What is mutable and immutable data type?</h3>
+<p>Mutable objects can be modified after creation, such as lists and dictionaries. Immutable objects cannot be changed once created, such as strings, tuples, and integers.</p>
+
+<h3>34. What is the difference between list() and tuple() conversion?</h3>
+<p>list() converts any iterable into a list, while tuple() converts it into a tuple. Lists are mutable, tuples are immutable.</p>
+
+<pre><code>s = "abc"
+print(list(s))
+print(tuple(s))
+</code></pre>
+
+<h3>35. What is the purpose of the split() method?</h3>
+<p>The split() method breaks a string into a list of substrings based on a separator. By default, it splits on whitespace.</p>
+
+<pre><code>text = "Python is easy"
+print(text.split())
+</code></pre>
+
+<h3>36. What is the difference between split() and join()?</h3>
+<p>split() converts a string into a list, while join() converts a list of strings into a single string.</p>
+
+<pre><code>words = ["Python", "is", "easy"]
+print(" ".join(words))
+</code></pre>
+
+<h3>37. What is the difference between append() and extend() for a list?</h3>
+<p>append() adds one element as a single item, while extend() adds multiple elements from another iterable.</p>
+
+<h3>38. What is a nested loop?</h3>
+<p>A nested loop is a loop inside another loop. It is commonly used to work with matrices or multi-dimensional data.</p>
+
+<pre><code>for i in range(3):
+    for j in range(2):
+        print(i, j)
+</code></pre>
+
+<h3>39. What is the difference between local variable and global variable?</h3>
+<p>A local variable is declared inside a function and can be used only there. A global variable is declared outside any function and can be accessed throughout the program.</p>
+
+<pre><code>x = 10
+
+def show():
+    y = 20
+    print(x, y)
+</code></pre>
+
+<h3>40. What is the purpose of the return statement?</h3>
+<p>The return statement ends a function and sends a result back to the caller. Without return, a function returns None.</p>
+
+<pre><code>def square(n):
+    return n * n
+</code></pre>
+
+<h3>41. What is the difference between a function and a method?</h3>
+<p>A function is a standalone block of code, while a method is a function defined inside a class and called on an object.</p>
+
+<h3>42. What is a module in Python? How do you import it?</h3>
+<p>A module is a Python file that contains functions, classes, or variables. It is imported using the import statement.</p>
+
+<pre><code>import math
+print(math.sqrt(16))
+</code></pre>
+
+<h3>43. What is the purpose of the len() function?</h3>
+<p>The len() function returns the length of a string, list, tuple, dictionary, or set.</p>
+
+<pre><code>print(len("Python"))
+print(len([1, 2, 3]))
+</code></pre>
+
+<h3>44. What is the difference between sorted() and sort()?</h3>
+<p>sort() sorts a list in place, while sorted() returns a new sorted list without changing the original list.</p>
+
+<pre><code>nums = [5, 2, 8]
+print(sorted(nums))
+print(nums)
+nums.sort()
+print(nums)
+</code></pre>
+
+<h3>45. What is a dictionary key and value?</h3>
+<p>A dictionary stores data as key-value pairs. Keys are unique identifiers, and values are the data associated with those keys.</p>
+
+<pre><code>student = {"name": "Rahul", "age": 22}
+print(student["name"])
+</code></pre>
+
+<h3>46. What is the difference between a set and a frozenset?</h3>
+<p>A set is mutable, meaning elements can be added or removed. A frozenset is immutable and cannot be changed after creation.</p>
+
+<h3>47. What do you mean by list comprehension?</h3>
+<p>List comprehension is a compact way to create a list using a single line of code.</p>
+
+<pre><code>squares = [x * x for x in range(1, 6)]
+print(squares)
+</code></pre>
+
+<h3>48. What is the difference between / and // operators?</h3>
+<p>/ returns a floating-point result, while // performs floor division and returns the integer quotient.</p>
+
+<pre><code>print(9 / 2)   # 4.5
+print(9 // 2)  # 4
+</code></pre>
+
+<h3>49. What is the difference between and and or operators?</h3>
+<p>and returns True only if both conditions are true. or returns True if at least one condition is true.</p>
+
+<pre><code>a = True
+b = False
+print(a and b)
+print(a or b)
+</code></pre>
+
+<h3>50. What is the difference between index and value in a list?</h3>
+<p>An index is the position of an element in a list, starting from 0. A value is the actual stored data in that position.</p>
+
+<pre><code>lst = [10, 20, 30]
+print(lst[0])  # value 10 at index 0
+</code></pre>
+
+<h3>51. What are Python comments?</h3>
+<p>Comments are non-executable lines used to explain the code. They help other developers understand the logic. Python uses # for single-line comments.</p>
+
+<pre><code># This is a comment
+print("Hello")
+</code></pre>
+
+<h3>52. What is the difference between tuple unpacking and list unpacking?</h3>
+<p>Tuple unpacking and list unpacking both extract values from sequences. The main difference is that tuples are immutable, while lists are mutable.</p>
+
+<pre><code>a, b = (10, 20)
+print(a, b)
+</code></pre>
+
+<h3>53. What is an exception in Python?</h3>
+<p>An exception is an error that occurs during program execution, such as dividing by zero or using an invalid index. Exceptions can be handled using try, except, and finally.</p>
+
+<h3>54. What is the difference between a syntax error and an exception?</h3>
+<p>A syntax error occurs when the code is written incorrectly and cannot be parsed. An exception occurs while the program is running and can sometimes be handled.</p>
+
+<h3>55. What is the purpose of the finally block?</h3>
+<p>The finally block always executes whether an error occurs or not. It is used to clean up resources such as closing files.</p>
+
+<pre><code>try:
+    x = 1
+except:
+    print("Error")
+finally:
+    print("Cleanup")
+</code></pre>
+
+<h3>56. What is the difference between a list and a string in terms of mutability?</h3>
+<p>A list is mutable and can be changed after creation, while a string is immutable and cannot be changed once created.</p>
+
+<h3>57. What is a dictionary method get() used for?</h3>
+<p>The get() method is used to access a dictionary value by key without raising a KeyError when the key is missing.</p>
+
+<pre><code>d = {"name": "Riya"}
+print(d.get("name"))
+print(d.get("age", "Not found"))
+</code></pre>
+
+<h3>58. What is the difference between set.add() and set.update()?</h3>
+<p>add() adds a single element to a set, while update() adds multiple elements or another iterable.</p>
+
+<pre><code>s = {1, 2}
+s.add(3)
+s.update([4, 5])
+print(s)
+</code></pre>
+
+<h3>59. What is a palindrome?</h3>
+<p>A palindrome is a string or number that reads the same forward and backward. Example: "madam", "121".</p>
+
+<pre><code>text = "madam"
+print(text == text[::-1])
+</code></pre>
+
+<h3>60. What is the difference between recursion and iteration?</h3>
+<p>Recursion uses function calls to solve a problem, while iteration uses loops. Recursion is usually more elegant for tree or factorial problems, but loops may be more efficient and easier to understand.</p>
