@@ -481,3 +481,826 @@ print(text == text[::-1])
 
 <h3>60. What is the difference between recursion and iteration?</h3>
 <p>Recursion uses function calls to solve a problem, while iteration uses loops. Recursion is usually more elegant for tree or factorial problems, but loops may be more efficient and easier to understand.</p>
+
+<h3>61. What is a class in Python?</h3>
+<p>A class is a blueprint for creating objects. It defines attributes and methods that the objects of that class can use.</p>
+
+<pre><code>class Student:
+    def __init__(self, name):
+        self.name = name
+</code></pre>
+
+<h3>62. What is an object in Python?</h3>
+<p>An object is an instance of a class. It contains data and can use the methods defined in the class.</p>
+
+<pre><code>s1 = Student("Rahul")
+print(s1.name)
+</code></pre>
+
+<h3>63. What is inheritance in Python?</h3>
+<p>Inheritance allows a class to reuse attributes and methods from another class. The child class inherits from the parent class.</p>
+
+<pre><code>class Animal:
+    def speak(self):
+        print("Animal")
+
+class Dog(Animal):
+    pass
+</code></pre>
+
+<h3>64. What is polymorphism?</h3>
+<p>Polymorphism means the same method name can behave differently depending on the object using it. For example, different classes may implement speak() in different ways.</p>
+
+<h3>65. What is the purpose of __str__() in a class?</h3>
+<p>__str__() defines how an object should be represented as a string when printed.</p>
+
+<pre><code>class Person:
+    def __init__(self, name):
+        self.name = name
+
+    def __str__(self):
+        return self.name
+</code></pre>
+
+<h3>66. What is the difference between private and public variables in Python?</h3>
+<p>Public variables can be accessed from anywhere, while private variables are intended to be used only inside the class and are often prefixed with _ or __.</p>
+
+<h3>67. What is the use of the collections module?</h3>
+<p>The collections module provides special data structures like defaultdict, Counter, deque, and OrderedDict that are useful in many programming problems.</p>
+
+<pre><code>from collections import Counter
+print(Counter([1, 2, 2, 3]))
+</code></pre>
+
+<h3>68. What is the difference between a list and a deque?</h3>
+<p>A list supports indexing and is good for general use, while a deque from collections is optimized for fast append and pop operations from both ends.</p>
+
+<h3>69. What are the advantages of Python?</h3>
+<p>Python is easy to learn, has a clean syntax, supports rapid development, has a large library ecosystem, and is useful for automation, web development, data science, AI, and scripting.</p>
+
+<h3>70. What are the disadvantages of Python?</h3>
+<p>Python can be slower than lower-level languages like C and C++, and it may use more memory in some cases. It is not always the best choice for very high-performance or system-level programming.</p>
+
+<h3>Final Revision Tip</h3>
+<p>For interviews and exams, focus on core topics like Python syntax, variables, loops, functions, strings, lists, dictionaries, sets, OOP, recursion, and exception handling. Writing and explaining small code examples will help you answer confidently.</p>
+
+<h2>Coding Questions (Basic to Advanced)</h2>
+
+<h3>1. Write a Python program to add two numbers entered by the user.</h3>
+<pre><code>a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+print("Sum:", a + b)
+</code></pre>
+
+<h3>2. Write a program to check whether a number is even or odd.</h3>
+<pre><code>n = int(input("Enter a number: "))
+if n % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+</code></pre>
+
+<h3>3. Write a program to find the greatest of three numbers.</h3>
+<pre><code>a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+c = int(input("Enter third number: "))
+
+if a >= b and a >= c:
+    print("Greatest is", a)
+elif b >= a and b >= c:
+    print("Greatest is", b)
+else:
+    print("Greatest is", c)
+</code></pre>
+
+<h3>4. Write a program to print the first 10 natural numbers.</h3>
+<pre><code>for i in range(1, 11):
+    print(i)
+</code></pre>
+
+<h3>5. Write a program to calculate the factorial of a number.</h3>
+<pre><code>n = int(input("Enter a number: "))
+fact = 1
+for i in range(1, n + 1):
+    fact *= i
+print("Factorial:", fact)
+</code></pre>
+
+<h3>6. Write a Python program to check whether a number is prime or not.</h3>
+<pre><code>n = int(input("Enter a number: "))
+flag = True
+
+if n <= 1:
+    flag = False
+else:
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            flag = False
+            break
+
+if flag:
+    print("Prime")
+else:
+    print("Not Prime")
+</code></pre>
+
+<h3>7. Write a program to reverse a string.</h3>
+<pre><code>s = input("Enter a string: ")
+print(s[::-1])
+</code></pre>
+
+<h3>8. Write a program to count vowels in a string.</h3>
+<pre><code>s = input("Enter a string: ").lower()
+vowels = "aeiou"
+count = 0
+for ch in s:
+    if ch in vowels:
+        count += 1
+print("Vowels:", count)
+</code></pre>
+
+<h3>9. Write a program to find the sum of elements in a list.</h3>
+<pre><code>nums = [10, 20, 30, 40]
+print(sum(nums))
+</code></pre>
+
+<h3>10. Write a program to find the largest number in a list.</h3>
+<pre><code>nums = [12, 45, 7, 89, 23]
+print(max(nums))
+</code></pre>
+
+<h3>11. Write a program to remove duplicate values from a list.</h3>
+<pre><code>nums = [1, 2, 2, 3, 4, 4, 5]
+unique = list(set(nums))
+print(unique)
+</code></pre>
+
+<h3>12. Write a program to print a multiplication table of a number.</h3>
+<pre><code>n = int(input("Enter a number: "))
+for i in range(1, 11):
+    print(f"{n} x {i} = {n * i}")
+</code></pre>
+
+<h3>13. Write a program to check if a string is a palindrome.</h3>
+<pre><code>s = input("Enter a string: ")
+if s == s[::-1]:
+    print("Palindrome")
+else:
+    print("Not a palindrome")
+</code></pre>
+
+<h3>14. Write a program to sort a list in ascending order.</h3>
+<pre><code>nums = [9, 1, 7, 2, 5]
+nums.sort()
+print(nums)
+</code></pre>
+
+<h3>15. Write a program to count the frequency of each element in a list.</h3>
+<pre><code>nums = [1, 2, 2, 3, 3, 3, 4]
+count = {}
+for n in nums:
+    count[n] = count.get(n, 0) + 1
+print(count)
+</code></pre>
+
+<h3>16. Write a program to check if a number is a perfect square.</h3>
+<pre><code>n = int(input("Enter a number: "))
+root = int(n ** 0.5)
+if root * root == n:
+    print("Perfect square")
+else:
+    print("Not a perfect square")
+</code></pre>
+
+<h3>17. Write a program to print the Fibonacci series up to n terms.</h3>
+<pre><code>n = int(input("Enter number of terms: "))
+a, b = 0, 1
+for _ in range(n):
+    print(a, end=" ")
+    a, b = b, a + b
+</code></pre>
+
+<h3>18. Write a program to find the sum of first n natural numbers using a while loop.</h3>
+<pre><code>n = int(input("Enter n: "))
+sum_val = 0
+count = 1
+while count <= n:
+    sum_val += count
+    count += 1
+print(sum_val)
+</code></pre>
+
+<h3>19. Write a program to create a dictionary of student names and marks.</h3>
+<pre><code>students = {
+    "Amit": 85,
+    "Neha": 90,
+    "Raj": 78
+}
+print(students)
+</code></pre>
+
+<h3>20. Write a program to swap two numbers without using a third variable.</h3>
+<pre><code>a = 10
+b = 20
+a, b = b, a
+print(a, b)
+</code></pre>
+
+<h3>21. Write a program to find the factorial of a number using recursion.</h3>
+<pre><code>def factorial(n):
+    if n == 0:
+        return 1
+    return n * factorial(n - 1)
+
+print(factorial(5))
+</code></pre>
+
+<h3>22. Write a recursive function to print all elements of a list.</h3>
+<pre><code>def print_list(lst, index=0):
+    if index == len(lst):
+        return
+    print(lst[index])
+    print_list(lst, index + 1)
+
+print_list([10, 20, 30, 40])
+</code></pre>
+
+<h3>23. Write a program to check if a list is empty or not.</h3>
+<pre><code>lst = []
+if not lst:
+    print("List is empty")
+else:
+    print("List is not empty")
+</code></pre>
+
+<h3>24. Write a program to merge two dictionaries.</h3>
+<pre><code>d1 = {"a": 1, "b": 2}
+d2 = {"c": 3, "d": 4}
+d1.update(d2)
+print(d1)
+</code></pre>
+
+<h3>25. Write a program to remove all spaces from a string.</h3>
+<pre><code>s = "P y t h o n"
+print(s.replace(" ", ""))
+</code></pre>
+
+<h3>26. Write a program to find the common elements between two lists.</h3>
+<pre><code>list1 = [1, 2, 3, 4]
+list2 = [3, 4, 5, 6]
+common = [x for x in list1 if x in list2]
+print(common)
+</code></pre>
+
+<h3>27. Write a program to calculate the average of numbers in a list.</h3>
+<pre><code>nums = [10, 20, 30, 40]
+avg = sum(nums) / len(nums)
+print(avg)
+</code></pre>
+
+<h3>28. Write a program to print the pattern:</h3>
+<pre><code>*
+**
+***
+****
+*****
+</code></pre>
+<pre><code>for i in range(1, 6):
+    print('*' * i)
+</code></pre>
+
+<h3>29. Write a program to check if a year is a leap year.</h3>
+<pre><code>year = int(input("Enter year: "))
+if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+    print("Leap year")
+else:
+    print("Not a leap year")
+</code></pre>
+
+<h3>30. Write a program to find the second largest number in a list.</h3>
+<pre><code>nums = [12, 45, 7, 89, 23]
+nums = sorted(set(nums))
+print(nums[-2])
+</code></pre>
+
+<h3>31. Write a program to input a sentence and count words.</h3>
+<pre><code>sentence = input("Enter a sentence: ")
+words = sentence.split()
+print("Total words:", len(words))
+</code></pre>
+
+<h3>32. Write a program to check whether a string contains a substring.</h3>
+<pre><code>text = "Python programming"
+sub = "program"
+if sub in text:
+    print("Found")
+else:
+    print("Not found")
+</code></pre>
+
+<h3>33. Write a program to find the sum of digits of a number.</h3>
+<pre><code>n = int(input("Enter a number: "))
+num = n
+s = 0
+while num > 0:
+    s += num % 10
+    num //= 10
+print("Sum of digits:", s)
+</code></pre>
+
+<h3>34. Write a program to print all even numbers from 1 to 50.</h3>
+<pre><code>for i in range(1, 51):
+    if i % 2 == 0:
+        print(i)
+</code></pre>
+
+<h3>35. Write a program to create a calculator using functions.</h3>
+<pre><code>def add(a, b):
+    return a + b
+
+def sub(a, b):
+    return a - b
+
+def mul(a, b):
+    return a * b
+
+def div(a, b):
+    return a / b
+
+print(add(5, 3))
+print(sub(5, 3))
+print(mul(5, 3))
+print(div(5, 3))
+</code></pre>
+
+<h3>36. Write a program to check whether a string is uppercase, lowercase, or mixed.</h3>
+<pre><code>s = input("Enter a string: ")
+if s.isupper():
+    print("Uppercase")
+elif s.islower():
+    print("Lowercase")
+else:
+    print("Mixed")
+</code></pre>
+
+<h3>37. Write a program to remove vowels from a string.</h3>
+<pre><code>s = input("Enter a string: ")
+vowels = "aeiouAEIOU"
+result = "".join(ch for ch in s if ch not in vowels)
+print(result)
+</code></pre>
+
+<h3>38. Write a program to find the number of uppercase letters in a string.</h3>
+<pre><code>s = input("Enter a string: ")
+count = sum(1 for ch in s if ch.isupper())
+print(count)
+</code></pre>
+
+<h3>39. Write a program to implement a simple login system using dictionary.</h3>
+<pre><code>users = {"admin": "1234", "user": "pass"}
+name = input("Enter username: ")
+password = input("Enter password: ")
+if users.get(name) == password:
+    print("Login successful")
+else:
+    print("Invalid username or password")
+</code></pre>
+
+<h3>40. Write a program to reverse each word in a sentence.</h3>
+<pre><code>sentence = input("Enter a sentence: ")
+words = sentence.split()
+rev_words = [word[::-1] for word in words]
+print(" ".join(rev_words))
+</code></pre>
+
+<h3>41. Write a program to find the sum of numbers in a 2D list.</h3>
+<pre><code>matrix = [[1, 2], [3, 4], [5, 6]]
+print(sum(sum(row) for row in matrix))
+</code></pre>
+
+<h3>42. Write a program to find the transpose of a matrix.</h3>
+<pre><code>matrix = [[1, 2, 3], [4, 5, 6]]
+transpose = [[matrix[i][j] for i in range(len(matrix))] for j in range(len(matrix[0]))]
+print(transpose)
+</code></pre>
+
+<h3>43. Write a program to implement linear search.</h3>
+<pre><code>nums = [10, 20, 30, 40, 50]
+key = 30
+found = False
+for i in range(len(nums)):
+    if nums[i] == key:
+        print("Found at index", i)
+        found = True
+        break
+if not found:
+    print("Not found")
+</code></pre>
+
+<h3>44. Write a program to implement binary search.</h3>
+<pre><code>nums = [10, 20, 30, 40, 50]
+key = 30
+low, high = 0, len(nums) - 1
+while low <= high:
+    mid = (low + high) // 2
+    if nums[mid] == key:
+        print("Found at index", mid)
+        break
+    elif nums[mid] < key:
+        low = mid + 1
+    else:
+        high = mid - 1
+else:
+    print("Not found")
+</code></pre>
+
+<h3>45. Write a program to find the HCF of two numbers.</h3>
+<pre><code>a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+while b:
+    a, b = b, a % b
+print("HCF:", a)
+</code></pre>
+
+<h3>46. Write a program to find the LCM of two numbers.</h3>
+<pre><code>a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+
+x, y = a, b
+while x != y:
+    if x < y:
+        x += a
+    else:
+        y += b
+print("LCM:", x)
+</code></pre>
+
+<h3>47. Write a program to print the ASCII value of a character.</h3>
+<pre><code>ch = input("Enter a character: ")
+print(ord(ch))
+</code></pre>
+
+<h3>48. Write a program to check if a string is an anagram.</h3>
+<pre><code>s1 = input("Enter first string: ")
+s2 = input("Enter second string: ")
+print(sorted(s1) == sorted(s2))
+</code></pre>
+
+<h3>49. Write a program to count the number of digits in a number.</h3>
+<pre><code>n = int(input("Enter a number: "))
+count = 0
+while n > 0:
+    count += 1
+    n //= 10
+print("Digits:", count)
+</code></pre>
+
+<h3>50. Write a program to print the reverse of a list without using slicing.</h3>
+<pre><code>nums = [1, 2, 3, 4, 5]
+rev = []
+for i in range(len(nums)-1, -1, -1):
+    rev.append(nums[i])
+print(rev)
+</code></pre>
+
+<h3>51. Write a Python program using a function to check if a number is prime.</h3>
+<pre><code>def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+print(is_prime(17))
+</code></pre>
+
+<h3>52. Write a program to check if a string contains only digits.</h3>
+<pre><code>s = input("Enter a string: ")
+print(s.isdigit())
+</code></pre>
+
+<h3>53. Write a program to remove duplicate characters from a string.</h3>
+<pre><code>s = "programming"
+result = "".join(dict.fromkeys(s))
+print(result)
+</code></pre>
+
+<h3>54. Write a program to find the longest word in a sentence.</h3>
+<pre><code>sentence = input("Enter a sentence: ")
+words = sentence.split()
+print(max(words, key=len))
+</code></pre>
+
+<h3>55. Write a program to read a list of numbers and print only the odd numbers.</h3>
+<pre><code>nums = [1, 2, 3, 4, 5, 6, 7]
+print([n for n in nums if n % 2 != 0])
+</code></pre>
+
+<h3>56. Write a Python program to create a class Employee with attributes name and salary.</h3>
+<pre><code>class Employee:
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+
+    def display(self):
+        print(self.name, self.salary)
+
+emp = Employee("Ravi", 25000)
+emp.display()
+</code></pre>
+
+<h3>57. Write a program to implement inheritance with a parent class and child class.</h3>
+<pre><code>class Animal:
+    def speak(self):
+        print("Animal speaks")
+
+class Dog(Animal):
+    def bark(self):
+        print("Dog barks")
+
+obj = Dog()
+obj.speak()
+obj.bark()
+</code></pre>
+
+<h3>58. Write a program to handle division by zero using exception handling.</h3>
+<pre><code>try:
+    a = int(input("Enter first number: "))
+    b = int(input("Enter second number: "))
+    print(a / b)
+except ZeroDivisionError:
+    print("Division by zero is not allowed")
+</code></pre>
+
+<h3>59. Write a program to print a star triangle in reverse order.</h3>
+<pre><code>for i in range(5, 0, -1):
+    print('*' * i)
+</code></pre>
+
+<h3>60. Write a program to find the most repeated element in a list.</h3>
+<pre><code>nums = [1, 2, 3, 2, 2, 4, 5]
+print(max(set(nums), key=nums.count))
+</code></pre>
+
+<h3>61. Write a program to convert a list of strings to uppercase.</h3>
+<pre><code>names = ["vinay", "amit", "neha"]
+print([name.upper() for name in names])
+</code></pre>
+
+<h3>62. Write a program to find the number of repeated letters in a word.</h3>
+<pre><code>word = "banana"
+count = {}
+for ch in word:
+    count[ch] = count.get(ch, 0) + 1
+print(count)
+</code></pre>
+
+<h3>63. Write a program to print the sum of even numbers from 1 to 100.</h3>
+<pre><code>total = 0
+for i in range(1, 101):
+    if i % 2 == 0:
+        total += i
+print(total)
+</code></pre>
+
+<h3>64. Write a program to count uppercase and lowercase letters in a string.</h3>
+<pre><code>s = input("Enter a string: ")
+upper = sum(1 for ch in s if ch.isupper())
+lower = sum(1 for ch in s if ch.islower())
+print("Uppercase:", upper)
+print("Lowercase:", lower)
+</code></pre>
+
+<h3>65. Write a program to sort a dictionary by keys.</h3>
+<pre><code>student = {"b": 2, "a": 1, "c": 3}
+print(dict(sorted(student.items())))
+</code></pre>
+
+<h3>66. Write a program to generate a list of square numbers from 1 to 10.</h3>
+<pre><code>squares = [x * x for x in range(1, 11)]
+print(squares)
+</code></pre>
+
+<h3>67. Write a program to print the first n odd numbers.</h3>
+<pre><code>n = int(input("Enter n: "))
+for i in range(1, 2 * n, 2):
+    print(i)
+</code></pre>
+
+<h3>68. Write a program to check if a number is Armstrong number.</h3>
+<pre><code>num = int(input("Enter a number: "))
+original = num
+sum_val = 0
+while num > 0:
+    digit = num % 10
+    sum_val += digit ** 3
+    num //= 10
+if sum_val == original:
+    print("Armstrong number")
+else:
+    print("Not an Armstrong number")
+</code></pre>
+
+<h3>69. Write a program to print the pattern of numbers:</h3>
+<pre><code>1
+12
+123
+1234
+12345
+</code></pre>
+<pre><code>for i in range(1, 6):
+    for j in range(1, i + 1):
+        print(j, end="")
+    print()
+</code></pre>
+
+<h3>70. Write a program to find unique elements in a list.</h3>
+<pre><code>nums = [1, 2, 2, 3, 4, 4, 5]
+unique = []
+for n in nums:
+    if n not in unique:
+        unique.append(n)
+print(unique)
+</code></pre>
+
+<h3>Final Coding Practice Tip</h3>
+<p>Practice coding questions every day by writing small programs for loops, strings, lists, dictionaries, recursion, and classes. In interviews, focus on clean logic, correct syntax, and explaining your code step by step.</p>
+
+<h2>MCQ + Coding Mixed Practice</h2>
+
+<h3>Multiple Choice Questions</h3>
+
+<h4>1. Which of the following is a Python keyword?</h4>
+<p>a) name<br>
+b) for<br>c) value<br>d) x</p>
+<p><b>Answer:</b> b) for</p>
+
+<h4>2. Which data type is used to store key-value pairs?</h4>
+<p>a) List<br>b) Tuple<br>c) Dictionary<br>d) Set</p>
+<p><b>Answer:</b> c) Dictionary</p>
+
+<h4>3. What is the output of print(9 // 2)?</h4>
+<p>a) 4.5<br>b) 4<br>c) 5<br>d) 2</p>
+<p><b>Answer:</b> b) 4</p>
+
+<h4>4. Strings in Python are:</h4>
+<p>a) Mutable<br>b) Immutable<br>c) Static<br>d) None</p>
+<p><b>Answer:</b> b) Immutable</p>
+
+<h4>5. Which function is used to get user input?</h4>
+<p>a) input()<br>b) read()<br>c) scan()<br>d) get()</p>
+<p><b>Answer:</b> a) input()</p>
+
+<h4>6. Which of the following is a mutable data type?</h4>
+<p>a) Tuple<br>b) String<br>c) List<br>d) Integer</p>
+<p><b>Answer:</b> c) List</p>
+
+<h4>7. What does range(5) generate?</h4>
+<p>a) 0 to 5<br>b) 1 to 5<br>c) 0 to 4<br>d) 1 to 4</p>
+<p><b>Answer:</b> c) 0 to 4</p>
+
+<h4>8. Which symbol is used for comments in Python?</h4>
+<p>a) // <br>b) /* */<br>c) #<br>d) --</p>
+<p><b>Answer:</b> c) #</p>
+
+<h4>9. Which of the following is used to define a function?</h4>
+<p>a) define<br>b) func<br>c) def<br>d) function</p>
+<p><b>Answer:</b> c) def</p>
+
+<h4>10. Which of the following is used to create an empty set?</h4>
+<p>a) {}<br>b) []<br>c) ()<br>d) set()</p>
+<p><b>Answer:</b> d) set()</p>
+
+<h4>11. What is the syntax for slicing a string?</h4>
+<p>a) str[start:end]<br>b) str(start,end)<br>c) str{start:end}<br>d) str[start,end]</p>
+<p><b>Answer:</b> a) str[start:end]</p>
+
+<h4>12. Which operator is used for exponentiation?</h4>
+<p>a) *<br>b) **<br>c) ^<br>d) %</p>
+<p><b>Answer:</b> b) **</p>
+
+<h4>13. What is the output of print("Python"[0])?</h4>
+<p>a) y<br>b) P<br>c) n<br>d) o</p>
+<p><b>Answer:</b> b) P</p>
+
+<h4>14. Which method removes the last item from a list?</h4>
+<p>a) remove()<br>b) clear()<br>c) pop()<br>d) del</p>
+<p><b>Answer:</b> c) pop()</p>
+
+<h4>15. What is used to handle exceptions in Python?</h4>
+<p>a) if/else<br>b) try/except<br>c) while/for<br>d) def/class</p>
+<p><b>Answer:</b> b) try/except</p>
+
+<h4>16. Which of the following creates a tuple?</h4>
+<p>a) [1, 2, 3]<br>b) {1, 2, 3}<br>c) (1, 2, 3)<br>d) {"1", "2"}</p>
+<p><b>Answer:</b> c) (1, 2, 3)</p>
+
+<h4>17. Which method converts a list into a set?</h4>
+<p>a) list()<br>b) tuple()<br>c) set()<br>d) dict()</p>
+<p><b>Answer:</b> c) set()</p>
+
+<h4>18. What is recursion?</h4>
+<p>a) Repeating code with loops<br>b) A function calling itself<br>c) A class inside a function<br>d) None of the above</p>
+<p><b>Answer:</b> b) A function calling itself</p>
+
+<h4>19. Which keyword is used to create a class?</h4>
+<p>a) function<br>b) define<br>c) class<br>d) object</p>
+<p><b>Answer:</b> c) class</p>
+
+<h4>20. Which statement is used to skip the current loop iteration?</h4>
+<p>a) break<br>b) pass<br>c) continue<br>d) return</p>
+<p><b>Answer:</b> c) continue</p>
+
+<h3>Coding Questions</h3>
+
+<h4>1. Write a program to print the sum of two numbers.</h4>
+<pre><code>a = 10
+b = 20
+print(a + b)
+</code></pre>
+
+<h4>2. Write a program to check whether a number is positive, negative or zero.</h4>
+<pre><code>n = int(input("Enter a number: "))
+if n > 0:
+    print("Positive")
+elif n < 0:
+    print("Negative")
+else:
+    print("Zero")
+</code></pre>
+
+<h4>3. Write a program to print the first 20 even numbers.</h4>
+<pre><code>count = 0
+num = 2
+while count < 20:
+    print(num, end=" ")
+    num += 2
+    count += 1
+</code></pre>
+
+<h4>4. Write a program to reverse a number.</h4>
+<pre><code>n = int(input("Enter a number: "))
+rev = 0
+while n > 0:
+    rev = rev * 10 + n % 10
+    n //= 10
+print(rev)
+</code></pre>
+
+<h4>5. Write a program to count the number of characters in a string.</h4>
+<pre><code>s = "Python"
+print(len(s))
+</code></pre>
+
+<h4>6. Write a program to find the factorial of a number using recursion.</h4>
+<pre><code>def fact(n):
+    if n == 0:
+        return 1
+    return n * fact(n - 1)
+
+print(fact(5))
+</code></pre>
+
+<h4>7. Write a program to merge two lists.</h4>
+<pre><code>a = [1, 2, 3]
+b = [4, 5, 6]
+print(a + b)
+</code></pre>
+
+<h4>8. Write a program to print the multiplication table of 5.</h4>
+<pre><code>for i in range(1, 11):
+    print(5 * i)
+</code></pre>
+
+<h4>9. Write a program to find the maximum value in a dictionary.</h4>
+<pre><code>d = {"a": 10, "b": 25, "c": 18}
+print(max(d.values()))
+</code></pre>
+
+<h4>10. Write a program to check if a string is palindrome.</h4>
+<pre><code>s = input("Enter a string: ")
+if s == s[::-1]:
+    print("Palindrome")
+else:
+    print("Not palindrome")
+</code></pre>
+
+<h4>11. Write a program to print the pattern:</h4>
+<pre><code>1
+22
+333
+4444
+55555
+</code></pre>
+<pre><code>for i in range(1, 6):
+    print(str(i) * i)
+</code></pre>
+
+<h4>12. Write a program to remove duplicate numbers from a list.</h4>
+<pre><code>nums = [1, 2, 2, 3, 4, 4, 5]
+print(list(set(nums)))
+</code></pre>
+
+<h3>Quick Revision Note</h3>
+<p>For MCQ rounds, focus on Python basics, loops, functions, data types, and OOP. For coding rounds, practice loops, strings, lists, dictionaries, recursion, and pattern programs.</p>
