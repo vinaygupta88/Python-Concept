@@ -943,7 +943,64 @@ print(emp.name)          # Public accessible
 emp.show_salary()        # Accessing private correctly
 # print(emp.__salary)    # Error: Not accessible directly
 ```
+<h4>Declaring Protected and Private Methods</h4>
+In Python, you can control method access levels using naming conventions:
 
+- Use a single underscore (_) before a method name to indicate it is protected meant to be used within class or its subclasses.
+- Use a double underscore (__) to define a private method accessible only within class due to name mangling.
+
+```
+class BankAccount:
+    def __init__(self):
+        self.balance = 1000
+
+    def _show_balance(self):
+        print(f"Balance: ₹{self.balance}")  # Protected method
+
+    def __update_balance(self, amount):
+        self.balance += amount             # Private method
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.__update_balance(amount)  # Accessing private method internally
+            self._show_balance()           # Accessing protected method
+        else:
+            print("Invalid deposit amount!")
+            
+account = BankAccount()
+account._show_balance()      # Works, but should be treated as internal
+# account.__update_balance(500)  # Error: private method
+account.deposit(500)         # Uses both methods internally
+```
+<h4>Getter and Setter Methods</h4>
+In Python, getter and setter methods are used to access and modify private attributes safely. Instead of accessing private data directly, these methods provide controlled access, allowing you to:
+
+- Read data using a getter method.
+- Update data using a setter method with optional validation or restrictions.
+
+```
+class Employee:
+    def __init__(self):
+        self.__salary = 50000  # Private attribute
+
+    def get_salary(self):    # Getter method
+        return self.__salary
+
+    def set_salary(self, amount):   # Setter method
+        if amount > 0:
+            self.__salary = amount
+        else:
+            print("Invalid salary amount!")
+
+emp = Employee()
+print(emp.get_salary())  # Access salary using getter
+
+emp.set_salary(60000)   # Update salary using setter
+print(emp.get_salary())
+```
+---
+
+## Day 14
 <h3>Abstraction</h3>
 Abstraction is the process of hiding implementation details and exposing only the essential functionality to the user. It is used to hide the implementation details from the user and expose only necessary parts, making the code simpler and easier to interact with.<br>
 <img src="https://media.geeksforgeeks.org/wp-content/uploads/20260520171243990924/data_abstraction.webp" height=250px><br>
