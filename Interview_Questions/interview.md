@@ -156,3 +156,98 @@ print(s)
 
 print(add(2, 3))
 </code></pre>
+
+<h2>Intermediate to Advanced</h2>
+
+<h3>21. What is recursion? What is a base case in recursion?</h3>
+<p>Recursion is when a function calls itself. The base case is the condition that stops the recursion; otherwise, the function can run forever.</p>
+
+<pre><code>def factorial(n):
+    if n == 0:
+        return 1
+    return n * factorial(n - 1)
+</code></pre>
+
+<h3>22. What is the difference between a recursive function and an iterative function?</h3>
+<p>A recursive function solves a problem by calling itself, while an iterative function uses loops to repeat steps. Recursion can be elegant for problems like tree traversal, but iteration may be more efficient and easier to debug.</p>
+
+<h3>23. What are function arguments in Python?</h3>
+<p>Function arguments are values passed into a function. Python supports positional arguments, keyword arguments, and default arguments.</p>
+
+<pre><code>def greet(name, message="Hello"):
+    print(message, name)
+
+greet("Amit")
+greet("Amit", "Hi")
+</code></pre>
+
+<h3>24. What is the difference between return and print in a function?</h3>
+<p>print displays output on the screen, but return sends the value back to the caller. A function can print something, but if it has no return value, it returns None by default.</p>
+
+<pre><code>def add(a, b):
+    return a + b
+
+result = add(3, 4)
+print(result)
+</code></pre>
+
+<h3>25. What is the difference between list, tuple, set, and dictionary?</h3>
+<p>List is ordered and mutable, tuple is ordered and immutable, set is unordered and contains unique elements, and dictionary stores data in key-value pairs. Each is used for different types of tasks.</p>
+
+<h3>26. What is a nested dictionary?</h3>
+<p>A nested dictionary is a dictionary that contains another dictionary as a value.</p>
+
+<pre><code>student = {
+    "name": "Sam",
+    "details": {
+        "age": 21,
+        "course": "Python"
+    }
+}
+
+print(student["details"]["course"])
+</code></pre>
+
+<h3>27. What is a lambda function?</h3>
+<p>A lambda function is an anonymous function defined in one line using the lambda keyword. It is often used for short operations.</p>
+
+<pre><code>square = lambda x: x * x
+print(square(5))
+</code></pre>
+
+<h3>28. What is the difference between map(), filter(), and reduce()?</h3>
+<p>map() applies a function to every item in an iterable, filter() selects items that satisfy a condition, and reduce() combines items into a single result. reduce() is available from functools.</p>
+
+<pre><code>from functools import reduce
+
+nums = [1, 2, 3, 4]
+print(list(map(lambda x: x * 2, nums)))
+print(list(filter(lambda x: x % 2 == 0, nums)))
+print(reduce(lambda a, b: a + b, nums))
+</code></pre>
+
+<h3>29. What are exceptions in Python? How do we handle them?</h3>
+<p>Exceptions are runtime errors that interrupt program execution. They are handled with try, except, and finally blocks to prevent the program from crashing.</p>
+
+<pre><code>try:
+    x = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+finally:
+    print("This always runs")
+</code></pre>
+
+<h3>30. What is object-oriented programming (OOP)? Explain classes, objects, inheritance, and polymorphism.</h3>
+<p>OOP is a programming style that organizes code into classes and objects. A class is a blueprint, an object is an instance of a class, inheritance allows one class to reuse features of another, and polymorphism allows the same method to behave differently in different classes.</p>
+
+<pre><code>class Animal:
+    def speak(self):
+        print("Animal sound")
+
+class Dog(Animal):
+    def speak(self):
+        print("Bark")
+
+obj = Dog()
+obj.speak()
+</code></pre>
