@@ -1127,6 +1127,68 @@ print(unique)
 <h3>Final Coding Practice Tip</h3>
 <p>Practice coding questions every day by writing small programs for loops, strings, lists, dictionaries, recursion, and classes. In interviews, focus on clean logic, correct syntax, and explaining your code step by step.</p>
 
+<h2>Pattern Coding Questions</h2>
+
+<h3>1. Write a program to print the pattern:</h3>
+<pre><code>*
+**
+***
+****
+*****
+</code></pre>
+<pre><code>for i in range(1, 6):
+    print('*' * i)
+</code></pre>
+
+<h3>2. Write a program to print the pattern:</h3>
+<pre><code>*****
+****
+***
+**
+*
+</code></pre>
+<pre><code>for i in range(5, 0, -1):
+    print('*' * i)
+</code></pre>
+
+<h3>3. Write a program to print the pattern:</h3>
+<pre><code>    *
+   **
+  ***
+ ****
+*****
+</code></pre>
+<pre><code>for i in range(1, 6):
+    print(' ' * (5 - i) + '*' * i)
+</code></pre>
+
+<h3>4. Write a program to print the pattern:</h3>
+<pre><code>*****
+ ****
+  ***
+   **
+    *
+</code></pre>
+<pre><code>for i in range(5, 0, -1):
+    print(' ' * (5 - i) + '*' * i)
+</code></pre>
+
+<h3>5. Write a program to print the pattern:</h3>
+<pre><code>1
+12
+123
+1234
+12345
+</code></pre>
+<pre><code>for i in range(1, 6):
+    for j in range(1, i + 1):
+        print(j, end=' ')
+    print()
+</code></pre>
+
+<h3>Pattern Practice Tip</h3>
+<p>Pattern programs are common in Python interviews because they test loop logic, spacing, and nested loop understanding. Practice them by focusing on how rows and columns are controlled.</p>
+
 <h2>MCQ + Coding Mixed Practice</h2>
 
 <h3>Multiple Choice Questions</h3>
